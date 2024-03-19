@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  FirstStep
-//
-//  Created by Vladimir Fibe on 19.03.2024.
-//
-
 import UIKit
 
 @main
