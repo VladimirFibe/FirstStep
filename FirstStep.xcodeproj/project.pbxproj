@@ -25,6 +25,7 @@
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		029192AB2BABD7CF00DD2671 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		02D0094C2BA90C630003B5AA /* FirstStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D0094F2BA90C630003B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D009512BA90C630003B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		02D009432BA90C630003B5AA = {
 			isa = PBXGroup;
 			children = (
+				029192AB2BABD7CF00DD2671 /* README.md */,
 				02D0094E2BA90C630003B5AA /* FirstStep */,
 				02D0094D2BA90C630003B5AA /* Products */,
 				029192A62BAA9F9000DD2671 /* Frameworks */,
