@@ -12,6 +12,7 @@
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
 		029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A22BAA67E700DD2671 /* BaseViewController.swift */; };
 		029192A82BAA9F9000DD2671 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 029192A72BAA9F9000DD2671 /* FirebaseAuth */; };
+		029192AA2BABD6FD00DD2671 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */; };
 		02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0094F2BA90C630003B5AA /* AppDelegate.swift */; };
 		02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009512BA90C630003B5AA /* SceneDelegate.swift */; };
 		02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009532BA90C630003B5AA /* AuthViewController.swift */; };
@@ -23,6 +24,7 @@
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02D0094C2BA90C630003B5AA /* FirstStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D0094F2BA90C630003B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D009512BA90C630003B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				02D009582BA90C630003B5AA /* Assets.xcassets */,
 				02D0095A2BA90C630003B5AA /* LaunchScreen.storyboard */,
+				029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */,
 				02D0095D2BA90C630003B5AA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -161,6 +164,7 @@
 			files = (
 				02D009592BA90C630003B5AA /* Assets.xcassets in Resources */,
 				02D0095C2BA90C630003B5AA /* Base in Resources */,
+				029192AA2BABD6FD00DD2671 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
