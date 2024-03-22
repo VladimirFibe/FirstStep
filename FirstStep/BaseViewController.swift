@@ -1,6 +1,7 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    var bag = Bag()
     deinit {
         print("\(String(describing: self)) dealloc" )
     }

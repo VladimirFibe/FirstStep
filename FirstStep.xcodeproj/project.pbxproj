@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4C72BAD819D00E861A3 /* AuthStore.swift */; };
+		0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4C92BAD81FA00E861A3 /* AuthUseCase.swift */; };
+		0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4CB2BAD824300E861A3 /* AuthService.swift */; };
+		0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -14,6 +18,7 @@
 		029192A82BAA9F9000DD2671 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 029192A72BAA9F9000DD2671 /* FirebaseAuth */; };
 		029192AA2BABD6FD00DD2671 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */; };
 		029192AD2BABD8C900DD2671 /* AuthStatusSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192AC2BABD8C900DD2671 /* AuthStatusSwitch.swift */; };
+		029192AF2BAD245100DD2671 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192AE2BAD245100DD2671 /* Store.swift */; };
 		02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0094F2BA90C630003B5AA /* AppDelegate.swift */; };
 		02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009512BA90C630003B5AA /* SceneDelegate.swift */; };
 		02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009532BA90C630003B5AA /* AuthViewController.swift */; };
@@ -22,12 +27,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0210D4C72BAD819D00E861A3 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		0210D4C92BAD81FA00E861A3 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		0210D4CB2BAD824300E861A3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		029192AB2BABD7CF00DD2671 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		029192AC2BABD8C900DD2671 /* AuthStatusSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusSwitch.swift; sourceTree = "<group>"; };
+		029192AE2BAD245100DD2671 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		02D0094C2BA90C630003B5AA /* FirstStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D0094F2BA90C630003B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D009512BA90C630003B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +60,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0210D4C52BAD7EC700E861A3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0291929B2BAA5DC700DD2671 /* BaseView.swift */,
+				029192A22BAA67E700DD2671 /* BaseViewController.swift */,
+				029192AE2BAD245100DD2671 /* Store.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		0210D4C62BAD817300E861A3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				02D009532BA90C630003B5AA /* AuthViewController.swift */,
+				0210D4C72BAD819D00E861A3 /* AuthStore.swift */,
+				0210D4C92BAD81FA00E861A3 /* AuthUseCase.swift */,
+				0210D4CB2BAD824300E861A3 /* AuthService.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,11 +123,11 @@
 				0291929A2BAA5DA200DD2671 /* Supporting Files */,
 				02D0094F2BA90C630003B5AA /* AppDelegate.swift */,
 				02D009512BA90C630003B5AA /* SceneDelegate.swift */,
-				02D009532BA90C630003B5AA /* AuthViewController.swift */,
-				0291929B2BAA5DC700DD2671 /* BaseView.swift */,
+				0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */,
+				0210D4C62BAD817300E861A3 /* Auth */,
 				029192A02BAA5EEE00DD2671 /* AuthTextField.swift */,
 				029192AC2BABD8C900DD2671 /* AuthStatusSwitch.swift */,
-				029192A22BAA67E700DD2671 /* BaseViewController.swift */,
+				0210D4C52BAD7EC700E861A3 /* Utilities */,
 			);
 			path = FirstStep;
 			sourceTree = "<group>";
@@ -183,10 +214,15 @@
 				02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */,
 				029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */,
 				029192AD2BABD8C900DD2671 /* AuthStatusSwitch.swift in Sources */,
+				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
+				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
+				0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,
+				0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */,
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
+				0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

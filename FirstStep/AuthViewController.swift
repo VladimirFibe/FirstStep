@@ -1,7 +1,30 @@
 import UIKit
 
 class AuthViewController: BaseViewController {
+    private var store: AuthStore
     private var isLogin = true { didSet { updateUI() }}
+
+    struct Model {
+        let close: Callback?
+    }
+
+    enum Flow {
+        case login
+        case register
+        case forgot
+    }
+
+    init(store: AuthStore, model: Model) {
+        self.store = store
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let model: Model
     private let emailTextField = AuthTextField(placeholder: "Email")
     private let passwordTextField = AuthTextField(placeholder: "Password", isSecureTextEntry: true)
     private let repeatTextField = AuthTextField(placeholder: "Repeat Password", isSecureTextEntry: true)
@@ -37,6 +60,14 @@ extension AuthViewController {
     @objc private func authSwitchTapped() {
         isLogin.toggle()
     }
+
+    @objc private func actionButtonTapped() {
+        store.sendAction(.signOut)
+    }
+
+    private func logout() {
+        model.close?()
+    }
 }
 // MARK: - Setup Views
 extension AuthViewController {
@@ -46,8 +77,10 @@ extension AuthViewController {
             view.addSubview($0)
         }
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .primaryActionTriggered)
         setupRootStackView()
         updateUI()
+        setupObservers()
     }
 
     private func setupRootStackView() {
@@ -68,6 +101,19 @@ extension AuthViewController {
             self.middleView.isHidden = !self.isLogin
             self.middleView.alpha = self.isLogin ? 1 : 0
         }
+    }
+
+    private func setupObservers() {
+        store
+            .events
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] event in
+                guard let self else { return }
+                switch event {
+                case .logout:
+                    self.logout()
+                }
+            }.store(in: &bag)
     }
 
     override func setupConstraints() {
