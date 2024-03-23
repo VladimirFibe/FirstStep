@@ -58,15 +58,21 @@ class AuthViewController: BaseViewController {
 // MARK: - Actions
 extension AuthViewController {
     @objc private func authSwitchTapped() {
+        print(#function)
         isLogin.toggle()
     }
 
     @objc private func actionButtonTapped() {
+        print(#function)
         store.sendAction(.signOut)
     }
 
     @objc private func forgotButtonTapped() {
+        print(#function)
+    }
 
+    @objc private func resendButtonTapped() {
+        print(#function)
     }
 
     @objc private func backgroundTapped() {
@@ -87,6 +93,8 @@ extension AuthViewController {
         }
         authStatusSwitch.configure(self, action: #selector(authSwitchTapped))
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .primaryActionTriggered)
+        forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
+        resendButton.addTarget(self, action: #selector(resendButtonTapped), for: .primaryActionTriggered)
         setupRootStackView()
         updateUI()
         setupObservers()
