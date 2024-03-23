@@ -3,7 +3,7 @@ import SnapKit
 
 final class AuthTextField: UIView {
     private var placeholder = ""
-
+    private var isSecureTextEntry = true { didSet { configure() }}
     private let showPasswordButton = UIButton(type: .system)
 
     private let label: UILabel = {
@@ -31,8 +31,8 @@ final class AuthTextField: UIView {
         label.text = text.isEmpty ? "" : placeholder
     }
 
-    func updateSecure(_ isSecureTextEntry: Bool) {
-        textField.isSecureTextEntry = isSecureTextEntry
+    @objc private func showChanged() {
+        isSecureTextEntry.toggle()
     }
 
     init(placeholder: String, isSecureTextEntry: Bool = false) {
@@ -45,15 +45,11 @@ final class AuthTextField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(with isSecureTextEntry: Bool) {
+    private func configure() {
         textField.isSecureTextEntry = isSecureTextEntry
         let systemName = isSecureTextEntry ? "eye" : "eye.slash"
         let image = UIImage(systemName: systemName)
         showPasswordButton.setImage(image, for: [])
-    }
-
-    func configure(target: Any?, action: Selector) {
-        showPasswordButton.addTarget(target, action: action, for: .primaryActionTriggered)
     }
 
     private func setupViews(placeholder: String, isSecureTextEntry: Bool = false) {
@@ -62,11 +58,13 @@ final class AuthTextField: UIView {
         if isSecureTextEntry {
             textField.rightView = showPasswordButton
             textField.rightViewMode = .always
-            configure(with: true)
+            configure()
         } else {
             textField.isSecureTextEntry = false
         }
         self.placeholder = placeholder
+        configure()
+        showPasswordButton.addTarget(self, action: #selector(showChanged), for: .primaryActionTriggered)
     }
 
     private func setupConstraints() {

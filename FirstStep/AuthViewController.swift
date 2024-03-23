@@ -65,9 +65,18 @@ extension AuthViewController {
         store.sendAction(.signOut)
     }
 
+    @objc private func forgotButtonTapped() {
+
+    }
+
+    @objc private func backgroundTapped() {
+        view.endEditing(false)
+    }
+
     private func logout() {
         model.close?()
     }
+
 }
 // MARK: - Setup Views
 extension AuthViewController {
