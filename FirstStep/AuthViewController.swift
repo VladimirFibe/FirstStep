@@ -58,17 +58,26 @@ class AuthViewController: BaseViewController {
 // MARK: - Actions
 extension AuthViewController {
     @objc private func authSwitchTapped() {
-        print(#function)
         isLogin.toggle()
     }
 
     @objc private func actionButtonTapped() {
-        print(#function)
-        store.sendAction(.signOut)
+        if let error = errorMessage(isLogin ? .login : .register) {
+            ProgressHUD.failed(error)
+        } else {
+            let email = emailTextField.text
+            let password = passwordTextField.text
+            ProgressHUD.succeed(email)
+        }
     }
 
     @objc private func forgotButtonTapped() {
-        print(#function)
+        if let error = errorMessage(.forgot) {
+            ProgressHUD.failed(error)
+        } else {
+            let email = emailTextField.text
+            ProgressHUD.succeed(email)
+        }
     }
 
     @objc private func resendButtonTapped() {
@@ -83,6 +92,21 @@ extension AuthViewController {
         model.close?()
     }
 
+    private func errorMessage(_ flow: Flow) -> String? {
+        if emailTextField.text.isEmpty {
+            return "Email is empty"
+        } else if flow == .forgot {
+            return nil
+        } else if passwordTextField.text.isEmpty {
+            return "Password is empty"
+        } else if flow == .login {
+            return nil
+        } else if passwordTextField.text == repeatTextField.text {
+            return nil
+        } else {
+            return "Password not equal"
+        }
+    }
 }
 // MARK: - Setup Views
 extension AuthViewController {
@@ -96,6 +120,7 @@ extension AuthViewController {
         forgotButton.addTarget(self, action: #selector(forgotButtonTapped), for: .primaryActionTriggered)
         resendButton.addTarget(self, action: #selector(resendButtonTapped), for: .primaryActionTriggered)
         setupRootStackView()
+        setupBackgroundTap()
         updateUI()
         setupObservers()
     }
@@ -131,6 +156,14 @@ extension AuthViewController {
                     self.logout()
                 }
             }.store(in: &bag)
+    }
+
+    func setupBackgroundTap() {
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(backgroundTapped)
+        )
+        view.addGestureRecognizer(tapGesture)
     }
 
     override func setupConstraints() {
