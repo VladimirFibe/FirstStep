@@ -35,7 +35,7 @@ class AuthViewController: BaseViewController {
     }(UIButton(type: .system))
     private let resendButton: UIButton = {
         $0.contentHorizontalAlignment = .trailing
-        $0.isHidden = true
+//        $0.isHidden = true
         $0.setTitle("Resend Email", for: [])
         return $0
     }(UIButton(type: .system))
@@ -66,7 +66,7 @@ extension AuthViewController {
             ProgressHUD.failed(error)
         } else {
             let email = emailTextField.text
-            let password = passwordTextField.text
+//            let password = passwordTextField.text
             ProgressHUD.succeed(email)
         }
     }
@@ -81,7 +81,12 @@ extension AuthViewController {
     }
 
     @objc private func resendButtonTapped() {
-        print(#function)
+        if let error = errorMessage(.forgot) {
+            ProgressHUD.failed(error)
+        } else {
+            let email = emailTextField.text
+            ProgressHUD.succeed(email)
+        }
     }
 
     @objc private func backgroundTapped() {

@@ -3,7 +3,7 @@ import SnapKit
 
 final class AuthTextField: UIView {
     private var placeholder = ""
-    private var isSecureTextEntry = true { didSet { configure() }}
+    private var isSecureTextEntry = false { didSet { configure() }}
     private let showPasswordButton = UIButton(type: .system)
 
     private let label: UILabel = {
@@ -56,6 +56,7 @@ final class AuthTextField: UIView {
         [label, textField, separator].forEach { addSubview($0)}
         textField.placeholder = placeholder
         if isSecureTextEntry {
+            self.isSecureTextEntry = true
             textField.rightView = showPasswordButton
             textField.rightViewMode = .always
             configure()
