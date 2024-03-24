@@ -66,8 +66,8 @@ extension AuthViewController {
             ProgressHUD.failed(error)
         } else {
             let email = emailTextField.text
-//            let password = passwordTextField.text
-            ProgressHUD.succeed(email)
+            let password = passwordTextField.text
+            isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
         }
     }
 
@@ -76,7 +76,7 @@ extension AuthViewController {
             ProgressHUD.failed(error)
         } else {
             let email = emailTextField.text
-            ProgressHUD.succeed(email)
+            store.sendAction(.sendPasswordReset(email))
         }
     }
 

@@ -11,6 +11,8 @@
 		0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4C92BAD81FA00E861A3 /* AuthUseCase.swift */; };
 		0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4CB2BAD824300E861A3 /* AuthService.swift */; };
 		0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */; };
+		02170BE72BB04A9700535C2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02170BE62BB04A9700535C2F /* FirebaseFirestore */; };
+		02170BE92BB04AA100535C2F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02170BE82BB04AA100535C2F /* FirebaseFirestoreSwift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -48,6 +50,7 @@
 		02A063622BAFB7020037B6E3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A063462BAFB7020037B6E3 /* ProgressView.swift */; };
 		02A063662BAFB7E80037B6E3 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A063632BAFB7E80037B6E3 /* UIApplication+Extension.swift */; };
 		02A063672BAFB7E80037B6E3 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A063642BAFB7E80037B6E3 /* UINavigationController+Extension.swift */; };
+		02A063692BAFBFDC0037B6E3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A063682BAFBFDC0037B6E3 /* Person.swift */; };
 		02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D0094F2BA90C630003B5AA /* AppDelegate.swift */; };
 		02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009512BA90C630003B5AA /* SceneDelegate.swift */; };
 		02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D009532BA90C630003B5AA /* AuthViewController.swift */; };
@@ -96,6 +99,7 @@
 		02A063462BAFB7020037B6E3 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		02A063632BAFB7E80037B6E3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		02A063642BAFB7E80037B6E3 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		02A063682BAFBFDC0037B6E3 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		02D0094C2BA90C630003B5AA /* FirstStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D0094F2BA90C630003B5AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D009512BA90C630003B5AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			files = (
 				0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */,
 				029192A82BAA9F9000DD2671 /* FirebaseAuth in Frameworks */,
+				02170BE72BB04A9700535C2F /* FirebaseFirestore in Frameworks */,
+				02170BE92BB04AA100535C2F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +146,14 @@
 				0210D4CB2BAD824300E861A3 /* AuthService.swift */,
 			);
 			name = Auth;
+			sourceTree = "<group>";
+		};
+		02170BE52BB04A1400535C2F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
@@ -211,6 +225,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		02A0636A2BAFC0980037B6E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02A063682BAFBFDC0037B6E3 /* Person.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		02A0636B2BAFC0A90037B6E3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				02D0094F2BA90C630003B5AA /* AppDelegate.swift */,
+				02D009512BA90C630003B5AA /* SceneDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		02D009432BA90C630003B5AA = {
 			isa = PBXGroup;
 			children = (
@@ -233,9 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				0291929A2BAA5DA200DD2671 /* Supporting Files */,
-				02D0094F2BA90C630003B5AA /* AppDelegate.swift */,
-				02D009512BA90C630003B5AA /* SceneDelegate.swift */,
-				0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */,
+				02A0636B2BAFC0A90037B6E3 /* App */,
+				02A0636A2BAFC0980037B6E3 /* Model */,
+				02170BE52BB04A1400535C2F /* Network */,
 				0210D4C62BAD817300E861A3 /* Auth */,
 				02A063652BAFB7E80037B6E3 /* Extensions */,
 				0210D4C52BAD7EC700E861A3 /* Utilities */,
@@ -262,6 +293,8 @@
 			packageProductDependencies = (
 				0291929E2BAA5EA600DD2671 /* SnapKit */,
 				029192A72BAA9F9000DD2671 /* FirebaseAuth */,
+				02170BE62BB04A9700535C2F /* FirebaseFirestore */,
+				02170BE82BB04AA100535C2F /* FirebaseFirestoreSwift */,
 			);
 			productName = FirstStep;
 			productReference = 02D0094C2BA90C630003B5AA /* FirstStep.app */;
@@ -340,6 +373,7 @@
 				02A063582BAFB7020037B6E3 /* ProgressHUD+QuintupleDotDance.swift in Sources */,
 				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
 				02A0634F2BAFB7020037B6E3 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
+				02A063692BAFBFDC0037B6E3 /* Person.swift in Sources */,
 				02A063662BAFB7E80037B6E3 /* UIApplication+Extension.swift in Sources */,
 				02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				02A063592BAFB7020037B6E3 /* ProgressHUD+SemiRingRotation.swift in Sources */,
@@ -600,6 +634,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		02170BE62BB04A9700535C2F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		02170BE82BB04AA100535C2F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
 		0291929E2BAA5EA600DD2671 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0291929D2BAA5EA600DD2671 /* XCRemoteSwiftPackageReference "SnapKit" */;
