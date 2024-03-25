@@ -13,6 +13,8 @@
 		0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */; };
 		02170BE72BB04A9700535C2F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02170BE62BB04A9700535C2F /* FirebaseFirestore */; };
 		02170BE92BB04AA100535C2F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02170BE82BB04AA100535C2F /* FirebaseFirestoreSwift */; };
+		02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BEE2BB10FFE00535C2F /* LoginViewController.swift */; };
+		02170BF22BB111EC00535C2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BF12BB111EC00535C2F /* LoginView.swift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -63,6 +65,8 @@
 		0210D4C92BAD81FA00E861A3 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		0210D4CB2BAD824300E861A3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		02170BEE2BB10FFE00535C2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		02170BF12BB111EC00535C2F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,24 @@
 				0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		02170BED2BB10FD000535C2F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0210D4C62BAD817300E861A3 /* Auth */,
+				02170BF02BB1100700535C2F /* Login */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		02170BF02BB1100700535C2F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				02170BEE2BB10FFE00535C2F /* LoginViewController.swift */,
+				02170BF12BB111EC00535C2F /* LoginView.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
@@ -263,11 +285,11 @@
 		02D0094E2BA90C630003B5AA /* FirstStep */ = {
 			isa = PBXGroup;
 			children = (
-				0291929A2BAA5DA200DD2671 /* Supporting Files */,
 				02A0636B2BAFC0A90037B6E3 /* App */,
+				0291929A2BAA5DA200DD2671 /* Supporting Files */,
 				02A0636A2BAFC0980037B6E3 /* Model */,
 				02170BE52BB04A1400535C2F /* Network */,
-				0210D4C62BAD817300E861A3 /* Auth */,
+				02170BED2BB10FD000535C2F /* Modules */,
 				02A063652BAFB7E80037B6E3 /* Extensions */,
 				0210D4C52BAD7EC700E861A3 /* Utilities */,
 			);
@@ -385,10 +407,12 @@
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
+				02170BF22BB111EC00535C2F /* LoginView.swift in Sources */,
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,
 				02A063532BAFB7020037B6E3 /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
 				0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */,
 				02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */,
+				02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */,
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
 				02A063562BAFB7020037B6E3 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
 				02A0635C2BAFB7020037B6E3 /* ProgressHUD+TriangleDotShift.swift in Sources */,
