@@ -35,7 +35,7 @@ class AuthViewController: BaseViewController {
     }(UIButton(type: .system))
     private let resendButton: UIButton = {
         $0.contentHorizontalAlignment = .trailing
-//        $0.isHidden = true
+        $0.isHidden = true
         $0.setTitle("Resend Email", for: [])
         return $0
     }(UIButton(type: .system))
