@@ -12,6 +12,7 @@ extension FirebaseClient: AuthServiceProtocol {
     var isEmailVerified: Bool? {
         Auth.auth().currentUser?.isEmailVerified
     }
+    
     func createUser(withEmail email: String, password: String) async throws {
         let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
         try await authResult.user.sendEmailVerification()

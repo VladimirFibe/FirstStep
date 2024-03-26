@@ -23,6 +23,14 @@ final class LoginView: BaseView {
         $0.backgroundColor = .secondarySystemFill
         return $0
     }(UIView())
+
+    var username: String {
+        usernameTextField.text ?? ""
+    }
+
+    var password: String {
+        passwordTextField.text ?? ""
+    }
 }
 //MARK: - Setup views
 extension LoginView {

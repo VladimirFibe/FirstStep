@@ -2,6 +2,8 @@ import Foundation
 
 enum AuthEvent {
     case logout
+    case login
+    case notVerified
 }
 
 enum AuthAction {
@@ -52,7 +54,12 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
 
     private func signIn(withEmail email: String, password: String) async throws {
         let response = try await useCase.signIn(withEmail: email, password: password)
-        try checkResponse(response)
+        if response {
+            sendEvent(.login)
+        } else {
+            sendEvent(.notVerified)
+        }
+        print("DEBUG: isEmailVerified: ", response)
     }
 
     private func sendPasswordReset(withEmail email: String) async throws {

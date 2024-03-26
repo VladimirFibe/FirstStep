@@ -45,6 +45,7 @@ class AuthViewController: BaseViewController {
         var config = UIButton.Configuration.filled()
         config.title = "Login"
         config.cornerStyle = .medium
+        config.imagePadding = 8
         $0.configuration = config
         return $0
     }(UIButton(type: .system))
@@ -67,6 +68,8 @@ extension AuthViewController {
         } else {
             let email = emailTextField.text
             let password = passwordTextField.text
+            actionButton.configuration?.showsActivityIndicator = true
+            resendButton.isHidden = true
             isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
         }
     }
@@ -95,6 +98,17 @@ extension AuthViewController {
 
     private func logout() {
         model.close?()
+    }
+
+    private func login() {
+        actionButton.configuration?.showsActivityIndicator = false
+        model.close?()
+    }
+
+    private func notVerified() {
+        actionButton.configuration?.showsActivityIndicator = false
+        ProgressHUD.failed("Email не подтвержден")
+        resendButton.isHidden = false
     }
 
     private func errorMessage(_ flow: Flow) -> String? {
@@ -159,6 +173,10 @@ extension AuthViewController {
                 switch event {
                 case .logout:
                     self.logout()
+                case .login:
+                    self.login()
+                case .notVerified:
+                    self.notVerified()
                 }
             }.store(in: &bag)
     }
