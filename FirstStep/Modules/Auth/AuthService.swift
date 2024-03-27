@@ -34,6 +34,7 @@ extension FirebaseClient: AuthServiceProtocol {
     }
 
     func sendEmail(_ email: String) async throws {
+        try await Auth.auth().currentUser?.reload()
         try await Auth.auth().currentUser?.sendEmailVerification()
     }
 }

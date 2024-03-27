@@ -27,8 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func start() {
+        print(#function)
         if let currentUser = Auth.auth().currentUser, currentUser.isEmailVerified {
-            let controller = makeOnboarding()
+            let controller = makeMainTabBar()
             setRootViewController(controller)
         } else {
             let controller = makeAuth()
@@ -47,6 +48,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let store = AuthStore(useCase: useCase)
         let model = AuthViewController.Model(close: { [weak self] in self?.start() })
         return UINavigationController(rootViewController: AuthViewController(store: store, model: model))
+    }
+
+    private func makeMainTabBar() -> UIViewController {
+        let model = MainTabBarController.Model(close: { [weak self] in self?.start() })
+        let controller = MainTabBarController(model: model)
+        return controller
     }
 }
 

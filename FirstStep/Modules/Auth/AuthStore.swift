@@ -1,7 +1,6 @@
 import Foundation
 
 enum AuthEvent {
-    case logout
     case login
     case notVerified
     case registered
@@ -15,7 +14,6 @@ enum AuthAction {
     case signIn(String, String)
     case sendPasswordReset(String)
     case sendEmail(String)
-    case signOut
 }
 
 final class AuthStore: Store<AuthEvent, AuthAction> {
@@ -43,7 +41,6 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
                 try await self?.sendPasswordReset(withEmail: email)
             }
 
-        case .signOut: signOut()
         case .sendEmail(let email):
             statefulCall { [weak self] in
                 try await self?.sendEmail(email)
@@ -77,13 +74,5 @@ final class AuthStore: Store<AuthEvent, AuthAction> {
     private func sendPasswordReset(withEmail email: String) async throws {
         try await useCase.sendPasswordReset(withEmail: email)
         sendEvent(.linkSended)
-    }
-
-    private func signOut() {
-        do {
-            try useCase.signOut()
-        } catch {
-            print(error.localizedDescription)
-        }
     }
 }

@@ -16,6 +16,13 @@
 		02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BEE2BB10FFE00535C2F /* LoginViewController.swift */; };
 		02170BF22BB111EC00535C2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BF12BB111EC00535C2F /* LoginView.swift */; };
 		021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B514E2BB29039002DF204 /* OnboardingContainer.swift */; };
+		02418F052BB422F900B6111B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F042BB422F900B6111B /* Tab.swift */; };
+		02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F082BB4239600B6111B /* MainTabBarController.swift */; };
+		02418F0B2BB4250D00B6111B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */; };
+		02418F0D2BB4256900B6111B /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F0C2BB4256900B6111B /* ChannelsViewController.swift */; };
+		02418F0F2BB4259500B6111B /* UsersViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F0E2BB4259500B6111B /* UsersViewControlller.swift */; };
+		02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F102BB425B200B6111B /* SettingsViewController.swift */; };
+		02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F162BB42B7100B6111B /* BaseTableViewController.swift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -69,6 +76,13 @@
 		02170BEE2BB10FFE00535C2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02170BF12BB111EC00535C2F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		021B514E2BB29039002DF204 /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
+		02418F042BB422F900B6111B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		02418F082BB4239600B6111B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		02418F0C2BB4256900B6111B /* ChannelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
+		02418F0E2BB4259500B6111B /* UsersViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewControlller.swift; sourceTree = "<group>"; };
+		02418F102BB425B200B6111B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		02418F162BB42B7100B6111B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -142,9 +156,14 @@
 		021B51472BB28EAA002DF204 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				02418F032BB422CF00B6111B /* TabBar */,
 				021B514D2BB28FDA002DF204 /* Onboarding */,
 				021B51492BB28F11002DF204 /* Login */,
 				021B51482BB28ECB002DF204 /* Auth */,
+				02418F152BB4263300B6111B /* Chats */,
+				02418F142BB4262A00B6111B /* Channels */,
+				02418F132BB4262100B6111B /* Users */,
+				02418F122BB4261200B6111B /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -185,6 +204,7 @@
 				02A063472BAFB7020037B6E3 /* ProgressHUD */,
 				029192AE2BAD245100DD2671 /* Store.swift */,
 				029192A22BAA67E700DD2671 /* BaseViewController.swift */,
+				02418F162BB42B7100B6111B /* BaseTableViewController.swift */,
 				0291929B2BAA5DC700DD2671 /* BaseView.swift */,
 			);
 			path = Utilities;
@@ -204,6 +224,47 @@
 				021B514E2BB29039002DF204 /* OnboardingContainer.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		02418F032BB422CF00B6111B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				02418F042BB422F900B6111B /* Tab.swift */,
+				02418F082BB4239600B6111B /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		02418F122BB4261200B6111B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				02418F102BB425B200B6111B /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		02418F132BB4262100B6111B /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				02418F0E2BB4259500B6111B /* UsersViewControlller.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		02418F142BB4262A00B6111B /* Channels */ = {
+			isa = PBXGroup;
+			children = (
+				02418F0C2BB4256900B6111B /* ChannelsViewController.swift */,
+			);
+			path = Channels;
+			sourceTree = "<group>";
+		};
+		02418F152BB4263300B6111B /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */,
+			);
+			path = Chats;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
@@ -389,6 +450,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A063512BAFB7020037B6E3 /* ProgressHUD+CircleRippleSingle.swift in Sources */,
+				02418F0D2BB4256900B6111B /* ChannelsViewController.swift in Sources */,
+				02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */,
 				02A0635A2BAFB7020037B6E3 /* ProgressHUD+SFSymbolBounce.swift in Sources */,
 				02A0634D2BAFB7020037B6E3 /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
 				02A063552BAFB7020037B6E3 /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
@@ -403,8 +466,10 @@
 				029192AD2BABD8C900DD2671 /* AuthStatusSwitch.swift in Sources */,
 				02A0634B2BAFB7020037B6E3 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
+				02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */,
 				02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */,
 				02A063582BAFB7020037B6E3 /* ProgressHUD+QuintupleDotDance.swift in Sources */,
+				02418F052BB422F900B6111B /* Tab.swift in Sources */,
 				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
 				02A0634F2BAFB7020037B6E3 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
 				02A063692BAFBFDC0037B6E3 /* Person.swift in Sources */,
@@ -414,6 +479,7 @@
 				02A0635F2BAFB7020037B6E3 /* ProgressHUD+Enums.swift in Sources */,
 				02A0634C2BAFB7020037B6E3 /* ProgressHUD+CircleBarSpinFade.swift in Sources */,
 				0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */,
+				02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */,
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
@@ -421,6 +487,7 @@
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
 				02170BF22BB111EC00535C2F /* LoginView.swift in Sources */,
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,
+				02418F0B2BB4250D00B6111B /* ChatsTableViewController.swift in Sources */,
 				02A063532BAFB7020037B6E3 /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
 				0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */,
 				02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */,
@@ -432,6 +499,7 @@
 				02A0634E2BAFB7020037B6E3 /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
 				02A0635E2BAFB7020037B6E3 /* ProgressHUD+Banner.swift in Sources */,
 				02A063622BAFB7020037B6E3 /* ProgressView.swift in Sources */,
+				02418F0F2BB4259500B6111B /* UsersViewControlller.swift in Sources */,
 				02A063672BAFB7E80037B6E3 /* UINavigationController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

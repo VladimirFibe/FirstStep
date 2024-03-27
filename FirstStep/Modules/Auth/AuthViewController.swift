@@ -97,23 +97,16 @@ extension AuthViewController {
         view.endEditing(false)
     }
 
-    private func logout() {
-        model.close?()
-    }
-
     private func login() {
-        actionButton.configuration?.showsActivityIndicator = false
         model.close?()
     }
 
     private func notVerified() {
-        actionButton.configuration?.showsActivityIndicator = false
-        ProgressHUD.failed("Email не подтвержден")
+        ProgressHUD.failed("Please verify email")
         resendButton.isHidden = false
     }
 
     private func registered() {
-        actionButton.configuration?.showsActivityIndicator = false
         isLogin = true
         ProgressHUD.succeed("Отправлен email")
         resendButton.isHidden = false
@@ -128,7 +121,6 @@ extension AuthViewController {
     }
 
     private func showError(_ message: String) {
-        actionButton.configuration?.showsActivityIndicator = false
         ProgressHUD.failed(message)
     }
 
@@ -191,9 +183,8 @@ extension AuthViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] event in
                 guard let self else { return }
+                self.actionButton.configuration?.showsActivityIndicator = false
                 switch event {
-                case .logout:
-                    self.logout()
                 case .login:
                     self.login()
                 case .notVerified:
