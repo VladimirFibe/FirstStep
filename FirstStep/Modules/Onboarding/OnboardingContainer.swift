@@ -1,9 +1,15 @@
 import UIKit
-
+import Firebase
 final class OnboardingContainer: BaseViewController {
+    var action: Callback?
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
     var currentVC: UIViewController { didSet {}}
+    private let logoutButton: UIButton = {
+        $0.setTitle("Logout", for: [])
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UIButton(type: .system))
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll,
@@ -26,10 +32,21 @@ final class OnboardingContainer: BaseViewController {
 }
 
 extension OnboardingContainer {
+    @objc private func logoutTapped() {
+        do {
+            try Auth.auth().signOut()
+        } catch {}
+        action?()
+    }
+}
+
+extension OnboardingContainer {
     override func setupViews() {
         view.backgroundColor = .systemPurple
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
+        view.addSubview(logoutButton)
+        logoutButton.addTarget(self, action: #selector(logoutTapped), for: .primaryActionTriggered)
         pageViewController.didMove(toParent: self)
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +61,9 @@ extension OnboardingContainer {
             view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
             view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
+
+            logoutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoutButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 }

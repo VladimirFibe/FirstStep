@@ -70,7 +70,8 @@ extension AuthViewController {
             let password = passwordTextField.text
             actionButton.configuration?.showsActivityIndicator = true
             resendButton.isHidden = true
-            isLogin ? store.sendAction(.signIn(email, password)) : store.sendAction(.createUser(email, password))
+            isLogin ? store.sendAction(.signIn(email, password)) 
+            : store.sendAction(.createUser(email, password))
         }
     }
 
@@ -88,7 +89,7 @@ extension AuthViewController {
             ProgressHUD.failed(error)
         } else {
             let email = emailTextField.text
-            ProgressHUD.succeed(email)
+            store.sendAction(.sendEmail(email))
         }
     }
 
@@ -109,6 +110,26 @@ extension AuthViewController {
         actionButton.configuration?.showsActivityIndicator = false
         ProgressHUD.failed("Email не подтвержден")
         resendButton.isHidden = false
+    }
+
+    private func registered() {
+        actionButton.configuration?.showsActivityIndicator = false
+        isLogin = true
+        ProgressHUD.succeed("Отправлен email")
+        resendButton.isHidden = false
+    }
+
+    private func emailSended() {
+        resendButton.isHidden = true
+    }
+
+    private func linkSended() {
+        ProgressHUD.succeed("Ссылка отправлена")
+    }
+
+    private func showError(_ message: String) {
+        actionButton.configuration?.showsActivityIndicator = false
+        ProgressHUD.failed(message)
     }
 
     private func errorMessage(_ flow: Flow) -> String? {
@@ -177,6 +198,14 @@ extension AuthViewController {
                     self.login()
                 case .notVerified:
                     self.notVerified()
+                case .registered:
+                    self.registered()
+                case .emailSended:
+                    self.emailSended()
+                case .linkSended:
+                    self.linkSended()
+                case .error(let error):
+                    self.showError(error)
                 }
             }.store(in: &bag)
     }

@@ -6,6 +6,7 @@ protocol AuthUseCaseProtocol {
     func signIn(withEmail email: String, password: String) async throws -> Bool
     func signOut() throws
     func sendPasswordReset(withEmail email: String) async throws
+    func sendEmail(_ email: String) async throws
 }
 final class AuthUseCase: AuthUseCaseProtocol {
     private let apiService: AuthServiceProtocol
@@ -30,5 +31,9 @@ final class AuthUseCase: AuthUseCaseProtocol {
 
     func sendPasswordReset(withEmail email: String) async throws {
         try await apiService.sendPasswordReset(withEmail: email)
+    }
+
+    func sendEmail(_ email: String) async throws {
+        try await apiService.sendEmail(email)
     }
 }

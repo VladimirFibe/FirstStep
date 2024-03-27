@@ -7,6 +7,16 @@ final class FirebaseClient {
 
     func createPerson(withEmail email: String, uid: String) throws {
         let person = Person(username: email, email: email)
-        try Firestore.firestore().collection("persons").document(uid).setData(from: person)
+        try reference(.persons).document(uid).setData(from: person)
+    }
+
+    func reference(_ collectionReference: FCollectionReference) -> CollectionReference {
+        Firestore.firestore().collection(collectionReference.rawValue)
+    }
+
+    enum FCollectionReference: String {
+        case persons
+        case messages
+        case channels
     }
 }

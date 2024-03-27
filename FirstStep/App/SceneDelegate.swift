@@ -28,24 +28,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func start() {
         if let currentUser = Auth.auth().currentUser, currentUser.isEmailVerified {
-            setRootViewController(OnboardingContainer())
-            do {
-                try Auth.auth().signOut()
-            } catch {
-                print(error.localizedDescription)
-            }
+            let controller = makeOnboarding()
+            setRootViewController(controller)
         } else {
             let controller = makeAuth()
             setRootViewController(controller)
         }
     }
 
+    private func makeOnboarding() -> UIViewController {
+        let controller = OnboardingContainer()
+        controller.action = { [weak self] in self?.start()}
+        return controller
+    }
+
     private func makeAuth() -> UIViewController {
         let useCase = AuthUseCase(apiService: FirebaseClient.shared)
         let store = AuthStore(useCase: useCase)
-        let model = AuthViewController.Model(close: { [weak self] in
-            self?.start()
-        })
+        let model = AuthViewController.Model(close: { [weak self] in self?.start() })
         return UINavigationController(rootViewController: AuthViewController(store: store, model: model))
     }
 }

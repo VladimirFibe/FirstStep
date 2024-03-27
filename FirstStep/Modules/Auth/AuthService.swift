@@ -6,6 +6,7 @@ protocol AuthServiceProtocol {
     func signIn(withEmail email: String, password: String) async throws -> Bool
     func signOut() throws
     func sendPasswordReset(withEmail email: String) async throws
+    func sendEmail(_ email: String) async throws
 }
 
 extension FirebaseClient: AuthServiceProtocol {
@@ -30,5 +31,9 @@ extension FirebaseClient: AuthServiceProtocol {
 
     func sendPasswordReset(withEmail email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+
+    func sendEmail(_ email: String) async throws {
+        try await Auth.auth().currentUser?.sendEmailVerification()
     }
 }
