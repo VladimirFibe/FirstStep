@@ -4,7 +4,6 @@ protocol AuthServiceProtocol {
     var isEmailVerified: Bool? { get }
     func createUser(withEmail email: String, password: String) async throws
     func signIn(withEmail email: String, password: String) async throws -> Bool
-    func signOut() throws
     func sendPasswordReset(withEmail email: String) async throws
     func sendEmail(_ email: String) async throws
 }
@@ -23,10 +22,6 @@ extension FirebaseClient: AuthServiceProtocol {
     func signIn(withEmail email: String, password: String) async throws -> Bool {
         let result = try await Auth.auth().signIn(withEmail: email, password: password)
         return result.user.isEmailVerified
-    }
-
-    func signOut() throws {
-        try Auth.auth().signOut()
     }
 
     func sendPasswordReset(withEmail email: String) async throws {

@@ -24,9 +24,7 @@ final class MainTabBarController: UITabBarController {
         let chats = UINavigationController(rootViewController: ChatsTableViewController())
         let channels = UINavigationController(rootViewController: ChannelsViewController())
         let users = UINavigationController(rootViewController: UsersViewControlller())
-        let controller = SettingsViewController()
-        controller.action = model.close
-        let settings = UINavigationController(rootViewController: controller)
+        let settings = UINavigationController(rootViewController: makeSettings())
 
         chats.tabBarItem = tabItem(for: .chats)
         channels.tabBarItem = tabItem(for: .channels)
@@ -47,5 +45,12 @@ final class MainTabBarController: UITabBarController {
 
     deinit {
         print("\(String(describing: self)) dealloc" )
+    }
+
+    private func makeSettings() -> UIViewController {
+        let useCase = SettingsUseCase(apiService: FirebaseClient.shared)
+        let store = SettingsStore(useCase: useCase)
+        let model = SettingsViewController.Model(close: model.close)
+        return SettingsViewController(store: store, model: model)
     }
 }

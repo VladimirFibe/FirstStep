@@ -4,10 +4,10 @@ protocol AuthUseCaseProtocol {
     var isEmailVerified: Bool? { get }
     func createUser(withEmail email: String, password: String) async throws
     func signIn(withEmail email: String, password: String) async throws -> Bool
-    func signOut() throws
     func sendPasswordReset(withEmail email: String) async throws
     func sendEmail(_ email: String) async throws
 }
+
 final class AuthUseCase: AuthUseCaseProtocol {
     private let apiService: AuthServiceProtocol
 
@@ -23,10 +23,6 @@ final class AuthUseCase: AuthUseCaseProtocol {
 
     func signIn(withEmail email: String, password: String) async throws -> Bool {
         try await apiService.signIn(withEmail: email, password: password)
-    }
-
-    func signOut() throws {
-        try apiService.signOut()
     }
 
     func sendPasswordReset(withEmail email: String) async throws {

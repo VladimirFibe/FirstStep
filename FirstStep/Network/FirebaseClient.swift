@@ -3,6 +3,7 @@ import FirebaseFirestore
 
 final class FirebaseClient {
     static let shared = FirebaseClient()
+    var person: Person? = nil
     private init() {}
 
     func createPerson(withEmail email: String, uid: String) throws {

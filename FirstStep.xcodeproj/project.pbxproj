@@ -23,6 +23,12 @@
 		02418F0F2BB4259500B6111B /* UsersViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F0E2BB4259500B6111B /* UsersViewControlller.swift */; };
 		02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F102BB425B200B6111B /* SettingsViewController.swift */; };
 		02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F162BB42B7100B6111B /* BaseTableViewController.swift */; };
+		02418F192BB4540E00B6111B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F182BB4540E00B6111B /* BaseTableViewCell.swift */; };
+		02418F1B2BB4545A00B6111B /* SettingsNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F1A2BB4545A00B6111B /* SettingsNameTableViewCell.swift */; };
+		02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F1C2BB45D0200B6111B /* EditProfileViewController.swift */; };
+		02418F202BB4E90E00B6111B /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F1F2BB4E90E00B6111B /* SettingsService.swift */; };
+		02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */; };
+		02418F242BB4EA0200B6111B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F232BB4EA0200B6111B /* SettingsStore.swift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -83,6 +89,12 @@
 		02418F0E2BB4259500B6111B /* UsersViewControlller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewControlller.swift; sourceTree = "<group>"; };
 		02418F102BB425B200B6111B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		02418F162BB42B7100B6111B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		02418F182BB4540E00B6111B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		02418F1A2BB4545A00B6111B /* SettingsNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNameTableViewCell.swift; sourceTree = "<group>"; };
+		02418F1C2BB45D0200B6111B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		02418F1F2BB4E90E00B6111B /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
+		02418F232BB4EA0200B6111B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +174,7 @@
 				021B51482BB28ECB002DF204 /* Auth */,
 				02418F152BB4263300B6111B /* Chats */,
 				02418F142BB4262A00B6111B /* Channels */,
+				02418F1E2BB45D4700B6111B /* EditProfile */,
 				02418F132BB4262100B6111B /* Users */,
 				02418F122BB4261200B6111B /* Settings */,
 			);
@@ -206,6 +219,7 @@
 				029192A22BAA67E700DD2671 /* BaseViewController.swift */,
 				02418F162BB42B7100B6111B /* BaseTableViewController.swift */,
 				0291929B2BAA5DC700DD2671 /* BaseView.swift */,
+				02418F182BB4540E00B6111B /* BaseTableViewCell.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -239,6 +253,10 @@
 			isa = PBXGroup;
 			children = (
 				02418F102BB425B200B6111B /* SettingsViewController.swift */,
+				02418F1A2BB4545A00B6111B /* SettingsNameTableViewCell.swift */,
+				02418F1F2BB4E90E00B6111B /* SettingsService.swift */,
+				02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */,
+				02418F232BB4EA0200B6111B /* SettingsStore.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -265,6 +283,14 @@
 				02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */,
 			);
 			path = Chats;
+			sourceTree = "<group>";
+		};
+		02418F1E2BB45D4700B6111B /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				02418F1C2BB45D0200B6111B /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
@@ -467,13 +493,17 @@
 				02A0634B2BAFB7020037B6E3 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
 				02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */,
+				02418F242BB4EA0200B6111B /* SettingsStore.swift in Sources */,
 				02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */,
 				02A063582BAFB7020037B6E3 /* ProgressHUD+QuintupleDotDance.swift in Sources */,
+				02418F192BB4540E00B6111B /* BaseTableViewCell.swift in Sources */,
 				02418F052BB422F900B6111B /* Tab.swift in Sources */,
 				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
 				02A0634F2BAFB7020037B6E3 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
+				02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */,
 				02A063692BAFBFDC0037B6E3 /* Person.swift in Sources */,
 				02A063662BAFB7E80037B6E3 /* UIApplication+Extension.swift in Sources */,
+				02418F202BB4E90E00B6111B /* SettingsService.swift in Sources */,
 				02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				02A063592BAFB7020037B6E3 /* ProgressHUD+SemiRingRotation.swift in Sources */,
 				02A0635F2BAFB7020037B6E3 /* ProgressHUD+Enums.swift in Sources */,
@@ -481,6 +511,7 @@
 				0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */,
 				02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */,
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
+				02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
@@ -491,6 +522,7 @@
 				02A063532BAFB7020037B6E3 /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
 				0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */,
 				02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */,
+				02418F1B2BB4545A00B6111B /* SettingsNameTableViewCell.swift in Sources */,
 				02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */,
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
 				02A063562BAFB7020037B6E3 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
