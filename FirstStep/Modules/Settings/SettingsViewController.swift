@@ -93,7 +93,7 @@ extension SettingsViewController {
 
 extension SettingsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = EditProfileViewController()
+        let controller = EditProfileViewController(style: .grouped)
         navigationController?.pushViewController(controller, animated: true)
     }
 }

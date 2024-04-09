@@ -6,6 +6,8 @@ final class PhotoTableViewCell: BaseTableViewCell {
     private let photoImageView: UIImageView = {
         $0.image = .avatar
         $0.contentMode = .scaleAspectFill
+        $0.layer.cornerRadius = 30
+        $0.layer.masksToBounds = true
         return $0
     }(UIImageView())
 
@@ -36,6 +38,7 @@ extension PhotoTableViewCell {
         [photoImageView, editButton, titleLabel].forEach {
             contentView.addSubview($0)
         }
+        selectionStyle = .none
     }
 
     override func setupConstraints() {

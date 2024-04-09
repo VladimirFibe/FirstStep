@@ -7,4 +7,6 @@ struct Person: Identifiable, Codable {
     var username: String
     var email: String
     var avatarLink = ""
+    var status = 0
+    var statuses = ["Available", "Busy", "At School"]
 }

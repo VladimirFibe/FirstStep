@@ -30,6 +30,10 @@
 		02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */; };
 		02418F242BB4EA0200B6111B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F232BB4EA0200B6111B /* SettingsStore.swift */; };
 		028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */; };
+		028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */; };
+		028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A82BC56AD80021AE72 /* EditProfileService.swift */; };
+		028C04AB2BC56B2E0021AE72 /* EditProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04AA2BC56B2E0021AE72 /* EditProfileUseCase.swift */; };
+		028C04AD2BC56BE20021AE72 /* EditProfileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04AC2BC56BE20021AE72 /* EditProfileStore.swift */; };
 		0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291929B2BAA5DC700DD2671 /* BaseView.swift */; };
 		0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0291929E2BAA5EA600DD2671 /* SnapKit */; };
 		029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029192A02BAA5EEE00DD2671 /* AuthTextField.swift */; };
@@ -97,6 +101,10 @@
 		02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
 		02418F232BB4EA0200B6111B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		028C04A82BC56AD80021AE72 /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
+		028C04AA2BC56B2E0021AE72 /* EditProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileUseCase.swift; sourceTree = "<group>"; };
+		028C04AC2BC56BE20021AE72 /* EditProfileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileStore.swift; sourceTree = "<group>"; };
 		0291929B2BAA5DC700DD2671 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		029192A02BAA5EEE00DD2671 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		029192A22BAA67E700DD2671 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +300,10 @@
 			children = (
 				02418F1C2BB45D0200B6111B /* EditProfileViewController.swift */,
 				028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */,
+				028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */,
+				028C04A82BC56AD80021AE72 /* EditProfileService.swift */,
+				028C04AA2BC56B2E0021AE72 /* EditProfileUseCase.swift */,
+				028C04AC2BC56BE20021AE72 /* EditProfileStore.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -517,6 +529,8 @@
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
+				028C04AB2BC56B2E0021AE72 /* EditProfileUseCase.swift in Sources */,
+				028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */,
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
@@ -528,11 +542,13 @@
 				02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */,
 				02418F1B2BB4545A00B6111B /* SettingsNameTableViewCell.swift in Sources */,
 				02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */,
+				028C04AD2BC56BE20021AE72 /* EditProfileStore.swift in Sources */,
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
 				02A063562BAFB7020037B6E3 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
 				02A0635C2BAFB7020037B6E3 /* ProgressHUD+TriangleDotShift.swift in Sources */,
 				0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */,
 				02A0634E2BAFB7020037B6E3 /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
+				028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */,
 				02A0635E2BAFB7020037B6E3 /* ProgressHUD+Banner.swift in Sources */,
 				02A063622BAFB7020037B6E3 /* ProgressView.swift in Sources */,
 				02418F0F2BB4259500B6111B /* UsersViewControlller.swift in Sources */,
