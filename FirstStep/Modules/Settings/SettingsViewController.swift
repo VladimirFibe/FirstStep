@@ -61,7 +61,6 @@ extension SettingsViewController {
             .sink {[weak self] event in
                 guard let self else { return }
                 switch event {
-
                 case .done:
                     self.showUserInfo()
                 case .signOut:
@@ -93,7 +92,10 @@ extension SettingsViewController {
 
 extension SettingsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = EditProfileViewController(style: .grouped)
-        navigationController?.pushViewController(controller, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            let controller = EditProfileViewController(style: .grouped)
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

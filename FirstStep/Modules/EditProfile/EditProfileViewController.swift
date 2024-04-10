@@ -55,9 +55,9 @@ extension EditProfileViewController {
 extension EditProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if !textFieldCell.text.isEmpty {
-            print("Save text")
-            view.endEditing(false)
+            store.sendAction(.updateUsername(textFieldCell.text))
         }
+        textField.resignFirstResponder()
         return true
     }
 }
