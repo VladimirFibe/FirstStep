@@ -29,6 +29,7 @@ class SettingsNameTableViewCell: BaseTableViewCell {
     }
 
     public func configure(with image: UIImage?) {
+        print("set avatar")
         photoImageView.image = image
     }
 }

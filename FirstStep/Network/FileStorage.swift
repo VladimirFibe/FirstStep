@@ -9,6 +9,32 @@ final class FileStorage {
         uploadData(imageData, directory: directory, completion: completion)
     }
 
+    static func downloadImage(
+        id: String,
+        link: String,
+        completion: @escaping (UIImage?) -> Void
+    ) {
+        if let image = UIImage(contentsOfFile: fileInDocumetsDirectory(fileName: id)) {
+            completion(image)
+        } else if let url = URL(string: link) {
+            let downloadQueue = DispatchQueue(label: "imageDownloadQueue")
+            downloadQueue.async {
+                if let data = NSData(contentsOf: url) {
+                    saveFileLocally(data, fileName: id)
+                    DispatchQueue.main.async {
+                        completion(UIImage(data: data as Data))
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            }
+        } else {
+            completion(nil)
+        }
+    }
+
     static func uploadData(_ data: Data,
                            directory: String,
                            completion: @escaping (String?) -> Void) {
@@ -34,5 +60,52 @@ final class FileStorage {
                 ProgressHUD.progress(value)
             }
         }
+    }
+    // MARK: - Save Locally
+    static func saveFileLocally(_ fileData: NSData, fileName: String) {
+        let docUrl = getDocumentsURL().appendingPathComponent(fileName, isDirectory: false)
+        print(docUrl)
+        fileData.write(to: docUrl, atomically: true)
+    }
+
+    static func saveImageLocally(_ image: UIImage, fileName: String) {
+        guard let data = image.jpegData(compressionQuality: 1.0) as? NSData else { return }
+        saveFileLocally(data, fileName: fileName)
+    }
+
+    // Helpers
+    static func getDocumentsURL() -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+    }
+
+    static func fileInDocumetsDirectory(fileName: String) -> String {
+        getDocumentsURL().appendingPathComponent(fileName).path
+    }
+
+    static func fileExistsAtPath(_ path: String) -> Bool {
+        FileManager.default.fileExists(atPath: fileInDocumetsDirectory(fileName: path))
+    }
+
+    static func fileNameFrom(fileUrl: String) -> String? {
+        fileUrl.components(separatedBy: "profile%2F").last?.components(separatedBy: ".jpg?").first
+    }
+}
+
+extension UIImage {
+    var isPortrait: Bool { size.height > size.width }
+    var breadth: CGFloat { min(size.height, size.width)}
+    var breadthSize: CGSize { CGSize(width: breadth, height: breadth)}
+    var breadthRect: CGRect { CGRect(origin: .zero, size: breadthSize)}
+    var breadthPoint: CGPoint { CGPoint(
+        x: isPortrait ? 0 : floor((size.width - size.height) / 2),
+        y: isPortrait ? floor((size.height - size.width) / 2) : 0)}
+    var circleMasked: UIImage? {
+        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        guard let cgImage = cgImage?.cropping(to: CGRect(
+            origin: breadthPoint, size: breadthSize)) else { return nil }
+        UIBezierPath(ovalIn: breadthRect).addClip()
+        UIImage(cgImage: cgImage).draw(in: breadthRect)
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }
