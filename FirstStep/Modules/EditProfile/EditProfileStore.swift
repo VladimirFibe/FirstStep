@@ -7,6 +7,7 @@ enum EditProfileEvent {
 enum EditProfileAction {
     case fetch
     case updateUsername(String)
+    case updateAvatarLink(String)
 }
 
 final class EditProfileStore: Store<EditProfileEvent, EditProfileAction> {
@@ -25,6 +26,8 @@ final class EditProfileStore: Store<EditProfileEvent, EditProfileAction> {
             }
         case .updateUsername(let username):
             updateUsername(username)
+        case .updateAvatarLink(let link):
+            updateAvatar(link)
         }
     }
 
@@ -35,5 +38,9 @@ final class EditProfileStore: Store<EditProfileEvent, EditProfileAction> {
 
     private func updateUsername(_ username: String) {
         useCase.updateUsername(username)
+    }
+
+    private func updateAvatar(_ avatarLink: String) {
+        useCase.updateAvatar(avatarLink)
     }
 }

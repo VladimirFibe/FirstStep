@@ -3,6 +3,7 @@ import Foundation
 protocol EditProfileUseCaseProtocol {
     func fetchPerson() async throws
     func updateUsername(_ username: String)
+    func updateAvatar(_ avatarLink: String)
 }
 
 final class EditProfileUseCase: EditProfileUseCaseProtocol {
@@ -18,5 +19,9 @@ final class EditProfileUseCase: EditProfileUseCaseProtocol {
 
     func updateUsername(_ username: String) {
         apiService.updateUsername(username)
+    }
+
+    func updateAvatar(_ avatarLink: String) {
+        apiService.updateAvatar(avatarLink)
     }
 }

@@ -16,6 +16,8 @@
 		02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BEE2BB10FFE00535C2F /* LoginViewController.swift */; };
 		02170BF22BB111EC00535C2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BF12BB111EC00535C2F /* LoginView.swift */; };
 		021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B514E2BB29039002DF204 /* OnboardingContainer.swift */; };
+		022DCA112BC657C100DF3F2F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022DCA102BC657C100DF3F2F /* FileStorage.swift */; };
+		022DCA132BC657F600DF3F2F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 022DCA122BC657F600DF3F2F /* FirebaseStorage */; };
 		02418F052BB422F900B6111B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F042BB422F900B6111B /* Tab.swift */; };
 		02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F082BB4239600B6111B /* MainTabBarController.swift */; };
 		02418F0B2BB4250D00B6111B /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */; };
@@ -87,6 +89,7 @@
 		02170BEE2BB10FFE00535C2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02170BF12BB111EC00535C2F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		021B514E2BB29039002DF204 /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
+		022DCA102BC657C100DF3F2F /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		02418F042BB422F900B6111B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		02418F082BB4239600B6111B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 				0291929F2BAA5EA600DD2671 /* SnapKit in Frameworks */,
 				029192A82BAA9F9000DD2671 /* FirebaseAuth in Frameworks */,
 				02170BE72BB04A9700535C2F /* FirebaseFirestore in Frameworks */,
+				022DCA132BC657F600DF3F2F /* FirebaseStorage in Frameworks */,
 				02170BE92BB04AA100535C2F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				0210D4CD2BAD826E00E861A3 /* FirebaseClient.swift */,
+				022DCA102BC657C100DF3F2F /* FileStorage.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				029192A72BAA9F9000DD2671 /* FirebaseAuth */,
 				02170BE62BB04A9700535C2F /* FirebaseFirestore */,
 				02170BE82BB04AA100535C2F /* FirebaseFirestoreSwift */,
+				022DCA122BC657F600DF3F2F /* FirebaseStorage */,
 			);
 			productName = FirstStep;
 			productReference = 02D0094C2BA90C630003B5AA /* FirstStep.app */;
@@ -491,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A063512BAFB7020037B6E3 /* ProgressHUD+CircleRippleSingle.swift in Sources */,
+				022DCA112BC657C100DF3F2F /* FileStorage.swift in Sources */,
 				02418F0D2BB4256900B6111B /* ChannelsViewController.swift in Sources */,
 				02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */,
 				02A0635A2BAFB7020037B6E3 /* ProgressHUD+SFSymbolBounce.swift in Sources */,
@@ -799,6 +806,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		022DCA122BC657F600DF3F2F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		0291929E2BAA5EA600DD2671 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

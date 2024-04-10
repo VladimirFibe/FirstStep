@@ -50,6 +50,20 @@ extension EditProfileViewController {
     @objc private func editButtonTapped() {
         presentPhotoPicker()
     }
+
+    private func uploadAvatarImage(_ image: UIImage) {
+        guard let id = FirebaseClient.shared.person?.id else { return }
+        let path = "/profile/\(id).jpg"
+        FileStorage.uploadImage(image, directory: path) { avatarLink in
+            if let avatarLink {
+                self.store.sendAction(.updateAvatarLink(avatarLink))
+                ProgressHUD.succeed("Аватар сохранен")
+
+            } else {
+                ProgressHUD.failed("Аватар не сохранен")
+            }
+        }
+    }
 }
 // MARK: - UITextFieldDelegate
 extension EditProfileViewController: UITextFieldDelegate {
@@ -101,6 +115,7 @@ extension EditProfileViewController: PHPickerViewControllerDelegate {
             DispatchQueue.main.async {
                 self.photoCell.configure(with: image)
             }
+            self.uploadAvatarImage(image)
         }
     }
     
