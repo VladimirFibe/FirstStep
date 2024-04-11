@@ -23,6 +23,7 @@ extension EditProfileViewController {
     override func setupViews() {
         photoCell.configure(self, action: #selector(editButtonTapped))
         textFieldCell.configure(delegate: self)
+        navigationItem.title = "Edit Profile"
         setupObservers()
     }
 
@@ -83,7 +84,8 @@ extension EditProfileViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 1 {
-            print("Change status")
+            let controller = ProfileStatusViewController()
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
 }

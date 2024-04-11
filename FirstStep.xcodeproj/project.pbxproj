@@ -31,6 +31,10 @@
 		02418F202BB4E90E00B6111B /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F1F2BB4E90E00B6111B /* SettingsService.swift */; };
 		02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */; };
 		02418F242BB4EA0200B6111B /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F232BB4EA0200B6111B /* SettingsStore.swift */; };
+		024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F7C2BC7844B00E232A2 /* ProfileStatusViewController.swift */; };
+		024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */; };
+		024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */; };
+		024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */; };
 		028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */; };
 		028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */; };
 		028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A82BC56AD80021AE72 /* EditProfileService.swift */; };
@@ -103,6 +107,10 @@
 		02418F1F2BB4E90E00B6111B /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		02418F212BB4E9AC00B6111B /* SettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUseCase.swift; sourceTree = "<group>"; };
 		02418F232BB4EA0200B6111B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		024B4F7C2BC7844B00E232A2 /* ProfileStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusViewController.swift; sourceTree = "<group>"; };
+		024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusService.swift; sourceTree = "<group>"; };
+		024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusUseCase.swift; sourceTree = "<group>"; };
+		024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusStore.swift; sourceTree = "<group>"; };
 		028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A82BC56AD80021AE72 /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 				02418F1E2BB45D4700B6111B /* EditProfile */,
 				02418F132BB4262100B6111B /* Users */,
 				02418F122BB4261200B6111B /* Settings */,
+				024B4F7E2BC7847700E232A2 /* ProfileStatus */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -311,6 +320,17 @@
 				028C04AC2BC56BE20021AE72 /* EditProfileStore.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		024B4F7E2BC7847700E232A2 /* ProfileStatus */ = {
+			isa = PBXGroup;
+			children = (
+				024B4F7C2BC7844B00E232A2 /* ProfileStatusViewController.swift */,
+				024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */,
+				024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */,
+				024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */,
+			);
+			path = ProfileStatus;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
@@ -505,13 +525,16 @@
 				02A063552BAFB7020037B6E3 /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
 				02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */,
 				02A063612BAFB7020037B6E3 /* ProgressHUD+Public.swift in Sources */,
+				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
 				02A063542BAFB7020037B6E3 /* ProgressHUD+DualDotSidestep.swift in Sources */,
+				024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */,
 				02A0635D2BAFB7020037B6E3 /* ProgressHUD.swift in Sources */,
 				029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */,
 				02A063572BAFB7020037B6E3 /* ProgressHUD+PacmanProgress.swift in Sources */,
 				021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */,
 				02A063502BAFB7020037B6E3 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
 				029192AD2BABD8C900DD2671 /* AuthStatusSwitch.swift in Sources */,
+				024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */,
 				02A0634B2BAFB7020037B6E3 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
 				02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */,
@@ -540,6 +563,7 @@
 				028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */,
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
+				024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */,
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
 				02170BF22BB111EC00535C2F /* LoginView.swift in Sources */,
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,

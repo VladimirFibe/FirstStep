@@ -6,8 +6,6 @@ final class PhotoTableViewCell: BaseTableViewCell {
     private let photoImageView: UIImageView = {
         $0.image = .avatar
         $0.contentMode = .scaleAspectFill
-        $0.layer.cornerRadius = 30
-        $0.layer.masksToBounds = true
         return $0
     }(UIImageView())
 
@@ -29,7 +27,7 @@ final class PhotoTableViewCell: BaseTableViewCell {
     }
 
     public func configure(with image: UIImage?) {
-        photoImageView.image = image
+        photoImageView.image = image?.circleMasked
     }
 }
 // MARK: - Setup Views

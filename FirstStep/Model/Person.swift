@@ -9,4 +9,11 @@ struct Person: Identifiable, Codable {
     var avatarLink = ""
     var status = 0
     var statuses = ["Available", "Busy", "At School"]
+    var current: String {
+        if status < statuses.count {
+            return statuses[status]
+        } else {
+            return "no status"
+        }
+    }
 }

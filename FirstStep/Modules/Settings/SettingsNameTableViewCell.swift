@@ -5,8 +5,6 @@ class SettingsNameTableViewCell: BaseTableViewCell {
 
     private let photoImageView: UIImageView = {
         $0.contentMode = .scaleAspectFill
-        $0.layer.cornerRadius = 29
-        $0.layer.masksToBounds = true
         return $0
     }(UIImageView())
 
@@ -25,12 +23,11 @@ class SettingsNameTableViewCell: BaseTableViewCell {
 //        let url = URL(string: person.avatarLink)
 //        photoImageView.kf.setImage(with: url)
         titleLabel.text = person.username
-//        subtitleLabel.text = person.status
+        subtitleLabel.text = person.current
     }
 
     public func configure(with image: UIImage?) {
-        print("set avatar")
-        photoImageView.image = image
+        photoImageView.image = image?.circleMasked
     }
 }
 // MARK: - Setup

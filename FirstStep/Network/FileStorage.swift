@@ -99,11 +99,12 @@ extension UIImage {
     var breadthPoint: CGPoint { CGPoint(
         x: isPortrait ? 0 : floor((size.width - size.height) / 2),
         y: isPortrait ? floor((size.height - size.width) / 2) : 0)}
+
     var circleMasked: UIImage? {
         UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
         defer { UIGraphicsEndImageContext() }
-        guard let cgImage = cgImage?.cropping(to: CGRect(
-            origin: breadthPoint, size: breadthSize)) else { return nil }
+        let rect = CGRect(origin: breadthPoint, size: breadthSize)
+        guard let cgImage = cgImage?.cropping(to: rect) else { return nil }
         UIBezierPath(ovalIn: breadthRect).addClip()
         UIImage(cgImage: cgImage).draw(in: breadthRect)
         return UIGraphicsGetImageFromCurrentImageContext()
