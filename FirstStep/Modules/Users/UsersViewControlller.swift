@@ -28,6 +28,7 @@ extension UsersViewControlller {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search User"
         searchController.searchResultsUpdater = self
+        
         definesPresentationContext = true
     }
 
@@ -66,7 +67,8 @@ extension UsersViewControlller {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let person = searchController.isActive ? filteredPersons[indexPath.row] : persons[indexPath.row]
-        print(person.username)
+        let controller = ProfileViewController(person: person)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 // MARK: -
@@ -85,6 +87,4 @@ extension UsersViewControlller: UISearchResultsUpdating {
         filteredPersons = text.isEmpty ? persons : persons.filter({ $0.username.lowercased().contains(text)})
         tableView.reloadData()
     }
-
-
 }

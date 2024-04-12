@@ -53,6 +53,7 @@
 		02983ACC2BC92E2E0011521C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02983ACB2BC92E2E0011521C /* FirebaseFirestore */; };
 		02983ACE2BC92E340011521C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02983ACD2BC92E340011521C /* FirebaseFirestoreSwift */; };
 		02983AD02BC943810011521C /* DummyUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ACF2BC943810011521C /* DummyUsers.swift */; };
+		02983AD22BC989940011521C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AD12BC989940011521C /* ProfileViewController.swift */; };
 		02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */; };
 		02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */; };
 		02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */; };
@@ -133,6 +134,7 @@
 		029192AC2BABD8C900DD2671 /* AuthStatusSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusSwitch.swift; sourceTree = "<group>"; };
 		029192AE2BAD245100DD2671 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		02983ACF2BC943810011521C /* DummyUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUsers.swift; sourceTree = "<group>"; };
+		02983AD12BC989940011521C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
 		02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BarSweepToggle.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				02418F132BB4262100B6111B /* Users */,
 				02418F122BB4261200B6111B /* Settings */,
 				024B4F7E2BC7847700E232A2 /* ProfileStatus */,
+				02983AD32BC98A050011521C /* Profile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -364,6 +367,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		02983AD32BC98A050011521C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				02983AD12BC989940011521C /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		02A063402BAFB7020037B6E3 /* Animations */ = {
@@ -565,6 +576,7 @@
 				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
 				02A0634F2BAFB7020037B6E3 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
 				02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */,
+				02983AD22BC989940011521C /* ProfileViewController.swift in Sources */,
 				02A063692BAFBFDC0037B6E3 /* Person.swift in Sources */,
 				02A063662BAFB7E80037B6E3 /* UIApplication+Extension.swift in Sources */,
 				028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */,
