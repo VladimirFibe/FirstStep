@@ -7,13 +7,14 @@ struct Person: Identifiable, Codable {
     var username: String
     var email: String
     var avatarLink = ""
-    var status = 0
-    var statuses = ["Available", "Busy", "At School"]
-    var current: String {
-        if status < statuses.count {
-            return statuses[status]
-        } else {
-            return "no status"
+    var status = Status()
+
+    struct Status: Codable {
+        var index = 0
+        var statuses = ["Available", "Busy", "At School"]
+
+        var text: String {
+            index < statuses.count ? statuses[index] : "No status"
         }
     }
 }

@@ -1,16 +1,17 @@
 import Foundation
 
 protocol ProfileStatusUseCaseProtocol {
-    func updateStatus(statuses: [String], current: Int)
+    func updateStatus(_ status: Person.Status)
 }
 
 final class ProfileStatusUseCase: ProfileStatusUseCaseProtocol {
-    func updateStatus(statuses: [String], current: Int) {
-        apiService.updateStatus(statuses: statuses, current: current)
-    }
-    
     private let apiService: ProfileStatusServiceProtocol
+
     init(apiService: ProfileStatusServiceProtocol) {
         self.apiService = apiService
+    }
+
+    func updateStatus(_ status: Person.Status) {
+        apiService.updateStatus(status)
     }
 }

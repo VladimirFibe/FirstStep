@@ -23,7 +23,7 @@ class SettingsNameTableViewCell: BaseTableViewCell {
 //        let url = URL(string: person.avatarLink)
 //        photoImageView.kf.setImage(with: url)
         titleLabel.text = person.username
-        subtitleLabel.text = person.current
+        subtitleLabel.text = person.status.text
     }
 
     public func configure(with image: UIImage?) {

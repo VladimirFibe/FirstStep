@@ -1,17 +1,16 @@
 import Foundation
 
 protocol ProfileStatusServiceProtocol {
-    func updateStatus(statuses: [String], current: Int)
+    func updateStatus(_ status: Person.Status)
 }
 
 extension FirebaseClient: ProfileStatusServiceProtocol {
-    func updateStatus(statuses: [String], current: Int) {
+    func updateStatus(_ status: Person.Status) {
         guard let uid = person?.id else { return }
-        person?.status = current
-        person?.statuses = statuses
+        person?.status = status
         reference(.persons)
             .document(uid)
-            .updateData(["statuses": statuses, "status": current])
+            .updateData(["status": ["index": status.index, "statuses": status.statuses]])
     }
     
 

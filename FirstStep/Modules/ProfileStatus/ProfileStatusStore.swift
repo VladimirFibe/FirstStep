@@ -5,7 +5,7 @@ enum ProfileStatusEvent {
 }
 
 enum ProfileStatusAction {
-    case update([String], Int)
+    case updateStatus(Person.Status)
 }
 
 final class ProfileStatusStore: Store<ProfileStatusEvent, ProfileStatusAction> {
@@ -17,12 +17,12 @@ final class ProfileStatusStore: Store<ProfileStatusEvent, ProfileStatusAction> {
 
     override func handleActions(action: ProfileStatusAction) {
         switch action {
-        case .update(let statuses, let current):
-            updateStatus(statuses: statuses, current: current)
+        case .updateStatus(let status):
+            updateStatus(status)
         }
     }
 
-    private func updateStatus(statuses: [String], current: Int) {
-        useCase.updateStatus(statuses: statuses, current: current)
+    private func updateStatus(_ status: Person.Status) {
+        useCase.updateStatus(status)
     }
 }

@@ -3,8 +3,7 @@ import UIKit
 final class ProfileStatusViewController: BaseTableViewController {
     let useCase = ProfileStatusUseCase(apiService: FirebaseClient.shared)
     lazy var store = ProfileStatusStore(useCase: useCase)
-    var statuses: [String] = FirebaseClient.shared.person?.statuses ?? ["No Status"]
-    var current: Int = FirebaseClient.shared.person?.status ?? 0
+    var status = FirebaseClient.shared.person?.status ?? Person.Status()
 }
 
 extension ProfileStatusViewController {
@@ -16,14 +15,14 @@ extension ProfileStatusViewController {
 
 extension ProfileStatusViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        statuses.count
+        status.statuses.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let status = statuses[indexPath.row]
-        cell.textLabel?.text = status
-        cell.accessoryType = current == indexPath.row ? .checkmark : .none
+        let text = status.statuses[indexPath.row]
+        cell.textLabel?.text = text
+        cell.accessoryType = status.index == indexPath.row ? .checkmark : .none
         return cell
     }
 }
@@ -31,8 +30,8 @@ extension ProfileStatusViewController {
 extension ProfileStatusViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        current = indexPath.row
-        store.sendAction(.update(statuses, current))
+        status.index = indexPath.row
+        store.sendAction(.updateStatus(status))
         navigationController?.popViewController(animated: true)
     }
 }

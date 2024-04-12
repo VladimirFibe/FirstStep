@@ -42,7 +42,7 @@ extension EditProfileViewController {
     private func showUserInfo() {
         if let person = FirebaseClient.shared.person, let id = person.id {
             textFieldCell.configure(with: person.username)
-            statusCell.textLabel?.text = person.statuses[person.status]
+            statusCell.textLabel?.text = person.status.text
             FileStorage.downloadImage(id: id, link: person.avatarLink) { image in
                 self.photoCell.configure(with: image)
             }
