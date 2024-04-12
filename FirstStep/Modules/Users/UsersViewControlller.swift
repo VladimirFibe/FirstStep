@@ -12,6 +12,8 @@ class UsersViewControlller: BaseTableViewController {
 extension UsersViewControlller {
     override func setupViews() {
         navigationItem.title = "Users"
+        refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
         store.sendAction(.fetch)
         setupObservers()
         setupSeachController()
@@ -57,6 +59,23 @@ extension UsersViewControlller {
         let person = searchController.isActive ? filteredPersons[indexPath.row] : persons[indexPath.row]
         cell.configure(with: person)
         return cell
+    }
+}
+// MARK: -
+extension UsersViewControlller {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let person = searchController.isActive ? filteredPersons[indexPath.row] : persons[indexPath.row]
+        print(person.username)
+    }
+}
+// MARK: -
+extension UsersViewControlller {
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let isRefreshing = refreshControl?.isRefreshing, isRefreshing {
+            store.sendAction(.fetch)
+            refreshControl?.endRefreshing()
+        }
     }
 }
 // MARK: - UISearchResultsUpdating
