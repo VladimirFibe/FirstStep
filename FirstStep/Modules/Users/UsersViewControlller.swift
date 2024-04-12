@@ -4,6 +4,9 @@ class UsersViewControlller: BaseTableViewController {
     let useCase = UsersUseCase(apiService: FirebaseClient.shared)
     lazy var store = UsersStore(useCase: useCase)
     var persons: [Person] = []
+    var filteredPersons: [Person] = []
+
+    let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
         store.sendAction(.fetch)
@@ -37,14 +40,16 @@ extension UsersViewControlller {
 // MARK: -
 extension UsersViewControlller {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        persons.count
+        searchController.isActive ? filteredPersons.count : persons.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.identifier, for: indexPath) as? UsersTableViewCell else {
             return UITableViewCell()
         }
-        cell.configure(with: persons[indexPath.row])
+        let person = searchController.isActive ? filteredPersons[indexPath.row] : persons[indexPath.row]
+        cell.configure(with: person)
         return cell
     }
 }
+
