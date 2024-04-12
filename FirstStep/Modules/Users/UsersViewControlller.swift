@@ -3,22 +3,30 @@ import UIKit
 class UsersViewControlller: BaseTableViewController {
     let useCase = UsersUseCase(apiService: FirebaseClient.shared)
     lazy var store = UsersStore(useCase: useCase)
-    var persons: [Person] = []
+    var persons: [Person] = [] //DummyUsers.create()
     var filteredPersons: [Person] = []
 
     let searchController = UISearchController(searchResultsController: nil)
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        store.sendAction(.fetch)
-    }
 }
 // MARK: - Setup Views
 extension UsersViewControlller {
     override func setupViews() {
         navigationItem.title = "Users"
+        store.sendAction(.fetch)
         setupObservers()
+        setupSeachController()
         tableView.register(UsersTableViewCell.self,
                            forCellReuseIdentifier: UsersTableViewCell.identifier)
+    }
+
+    private func setupSeachController() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
+
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search User"
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = true
     }
 
     private func setupObservers() {
@@ -29,9 +37,8 @@ extension UsersViewControlller {
                 guard let self else { return }
                 switch event {
                 case .done(let persons):
-                    print("Persons: ", persons.count)
                     self.persons = persons
-                    tableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
             .store(in: &bag)
@@ -52,4 +59,13 @@ extension UsersViewControlller {
         return cell
     }
 }
+// MARK: - UISearchResultsUpdating
+extension UsersViewControlller: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text?.lowercased() else { return }
+        filteredPersons = text.isEmpty ? persons : persons.filter({ $0.username.lowercased().contains(text)})
+        tableView.reloadData()
+    }
 
+
+}
