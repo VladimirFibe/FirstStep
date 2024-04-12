@@ -38,6 +38,7 @@
 		026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B62BC8E9D0004FF4BC /* UsersService.swift */; };
 		026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */; };
 		026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */; };
+		026B93BD2BC8F63D004FF4BC /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BC2BC8F63D004FF4BC /* UsersTableViewCell.swift */; };
 		028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */; };
 		028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */; };
 		028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A82BC56AD80021AE72 /* EditProfileService.swift */; };
@@ -117,6 +118,7 @@
 		026B93B62BC8E9D0004FF4BC /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
 		026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
+		026B93BC2BC8F63D004FF4BC /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A82BC56AD80021AE72 /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				02418F0E2BB4259500B6111B /* UsersViewControlller.swift */,
+				026B93BC2BC8F63D004FF4BC /* UsersTableViewCell.swift */,
 				026B93B62BC8E9D0004FF4BC /* UsersService.swift */,
 				026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */,
 				026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */,
@@ -541,6 +544,7 @@
 				024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */,
 				02A0635D2BAFB7020037B6E3 /* ProgressHUD.swift in Sources */,
 				029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */,
+				026B93BD2BC8F63D004FF4BC /* UsersTableViewCell.swift in Sources */,
 				02A063572BAFB7020037B6E3 /* ProgressHUD+PacmanProgress.swift in Sources */,
 				021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */,
 				02A063502BAFB7020037B6E3 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,

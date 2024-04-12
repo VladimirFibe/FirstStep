@@ -14,7 +14,8 @@ extension UsersViewControlller {
     override func setupViews() {
         navigationItem.title = "Users"
         setupObservers()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(UsersTableViewCell.self,
+                           forCellReuseIdentifier: UsersTableViewCell.identifier)
     }
 
     private func setupObservers() {
@@ -40,8 +41,10 @@ extension UsersViewControlller {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = persons[indexPath.row].username
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.identifier, for: indexPath) as? UsersTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: persons[indexPath.row])
         return cell
     }
 }
