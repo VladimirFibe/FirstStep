@@ -35,6 +35,9 @@
 		024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */; };
 		024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */; };
 		024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */; };
+		026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B62BC8E9D0004FF4BC /* UsersService.swift */; };
+		026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */; };
+		026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */; };
 		028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */; };
 		028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */; };
 		028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A82BC56AD80021AE72 /* EditProfileService.swift */; };
@@ -111,6 +114,9 @@
 		024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusService.swift; sourceTree = "<group>"; };
 		024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusUseCase.swift; sourceTree = "<group>"; };
 		024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusStore.swift; sourceTree = "<group>"; };
+		026B93B62BC8E9D0004FF4BC /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
+		026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
+		026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
 		028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A82BC56AD80021AE72 /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
@@ -289,6 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				02418F0E2BB4259500B6111B /* UsersViewControlller.swift */,
+				026B93B62BC8E9D0004FF4BC /* UsersService.swift */,
+				026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */,
+				026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -517,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A063512BAFB7020037B6E3 /* ProgressHUD+CircleRippleSingle.swift in Sources */,
+				026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */,
 				022DCA112BC657C100DF3F2F /* FileStorage.swift in Sources */,
 				02418F0D2BB4256900B6111B /* ChannelsViewController.swift in Sources */,
 				02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */,
@@ -526,6 +536,7 @@
 				02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */,
 				02A063612BAFB7020037B6E3 /* ProgressHUD+Public.swift in Sources */,
 				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
+				026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */,
 				02A063542BAFB7020037B6E3 /* ProgressHUD+DualDotSidestep.swift in Sources */,
 				024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */,
 				02A0635D2BAFB7020037B6E3 /* ProgressHUD.swift in Sources */,
@@ -537,6 +548,7 @@
 				024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */,
 				02A0634B2BAFB7020037B6E3 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
+				026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */,
 				02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */,
 				02418F242BB4EA0200B6111B /* SettingsStore.swift in Sources */,
 				02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */,
@@ -726,7 +738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstStep/Info.plist;
@@ -755,7 +767,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstStep/Info.plist;
