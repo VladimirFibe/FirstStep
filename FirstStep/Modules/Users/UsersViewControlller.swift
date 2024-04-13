@@ -68,6 +68,7 @@ extension UsersViewControlller {
         tableView.deselectRow(at: indexPath, animated: true)
         let person = searchController.isActive ? filteredPersons[indexPath.row] : persons[indexPath.row]
         let controller = ProfileViewController(person: person)
+        controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
     }
 }

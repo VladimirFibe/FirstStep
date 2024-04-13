@@ -54,6 +54,12 @@
 		02983ACE2BC92E340011521C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02983ACD2BC92E340011521C /* FirebaseFirestoreSwift */; };
 		02983AD02BC943810011521C /* DummyUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ACF2BC943810011521C /* DummyUsers.swift */; };
 		02983AD22BC989940011521C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AD12BC989940011521C /* ProfileViewController.swift */; };
+		02983AD52BC98AD70011521C /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AD42BC98AD70011521C /* ProfileHeaderCell.swift */; };
+		02983AD72BC9AEA50011521C /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AD62BC9AEA50011521C /* Recent.swift */; };
+		02983AD92BC9B00C0011521C /* ChatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AD82BC9B00C0011521C /* ChatsCell.swift */; };
+		02983ADB2BC9D5580011521C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADA2BC9D5580011521C /* Date+Extension.swift */; };
+		02983ADD2BCA022E0011521C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADC2BCA022E0011521C /* ChatViewController.swift */; };
+		02983AE12BCA03B90011521C /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02983AE02BCA03B90011521C /* MessageKit */; };
 		02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */; };
 		02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */; };
 		02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */; };
@@ -135,6 +141,11 @@
 		029192AE2BAD245100DD2671 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		02983ACF2BC943810011521C /* DummyUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyUsers.swift; sourceTree = "<group>"; };
 		02983AD12BC989940011521C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		02983AD42BC98AD70011521C /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		02983AD62BC9AEA50011521C /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		02983AD82BC9B00C0011521C /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
+		02983ADA2BC9D5580011521C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		02983ADC2BCA022E0011521C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
 		02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BarSweepToggle.swift"; sourceTree = "<group>"; };
@@ -182,6 +193,7 @@
 				02983ACE2BC92E340011521C /* FirebaseFirestoreSwift in Frameworks */,
 				02983AC42BC92E0E0011521C /* SnapKit in Frameworks */,
 				02983ACC2BC92E2E0011521C /* FirebaseFirestore in Frameworks */,
+				02983AE12BCA03B90011521C /* MessageKit in Frameworks */,
 				02983AC82BC92E1F0011521C /* FirebaseAuth in Frameworks */,
 				02983ACA2BC92E290011521C /* FirebaseStorage in Frameworks */,
 			);
@@ -213,6 +225,7 @@
 				02418F122BB4261200B6111B /* Settings */,
 				024B4F7E2BC7847700E232A2 /* ProfileStatus */,
 				02983AD32BC98A050011521C /* Profile */,
+				02983ADE2BCA02770011521C /* Chat */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				02A063682BAFBFDC0037B6E3 /* Person.swift */,
+				02983AD62BC9AEA50011521C /* Recent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */,
+				02983AD82BC9B00C0011521C /* ChatsCell.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -373,8 +388,17 @@
 			isa = PBXGroup;
 			children = (
 				02983AD12BC989940011521C /* ProfileViewController.swift */,
+				02983AD42BC98AD70011521C /* ProfileHeaderCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		02983ADE2BCA02770011521C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				02983ADC2BCA022E0011521C /* ChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		02A063402BAFB7020037B6E3 /* Animations */ = {
@@ -424,6 +448,7 @@
 			children = (
 				02A063632BAFB7E80037B6E3 /* UIApplication+Extension.swift */,
 				02A063642BAFB7E80037B6E3 /* UINavigationController+Extension.swift */,
+				02983ADA2BC9D5580011521C /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,6 +507,7 @@
 				02983AC92BC92E290011521C /* FirebaseStorage */,
 				02983ACB2BC92E2E0011521C /* FirebaseFirestore */,
 				02983ACD2BC92E340011521C /* FirebaseFirestoreSwift */,
+				02983AE02BCA03B90011521C /* MessageKit */,
 			);
 			productName = FirstStep;
 			productReference = 02D0094C2BA90C630003B5AA /* FirstStep.app */;
@@ -514,6 +540,7 @@
 			packageReferences = (
 				02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				02983AC22BC92E0E0011521C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				02983ADF2BCA03B90011521C /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 02D0094D2BA90C630003B5AA /* Products */;
 			projectDirPath = "";
@@ -550,6 +577,7 @@
 				02A0635A2BAFB7020037B6E3 /* ProgressHUD+SFSymbolBounce.swift in Sources */,
 				02A0634D2BAFB7020037B6E3 /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
 				02A063552BAFB7020037B6E3 /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
+				02983AD72BC9AEA50011521C /* Recent.swift in Sources */,
 				02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */,
 				02A063612BAFB7020037B6E3 /* ProgressHUD+Public.swift in Sources */,
 				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
@@ -562,8 +590,10 @@
 				02A063572BAFB7020037B6E3 /* ProgressHUD+PacmanProgress.swift in Sources */,
 				021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */,
 				02A063502BAFB7020037B6E3 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
+				02983AD92BC9B00C0011521C /* ChatsCell.swift in Sources */,
 				029192AD2BABD8C900DD2671 /* AuthStatusSwitch.swift in Sources */,
 				024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */,
+				02983ADD2BCA022E0011521C /* ChatViewController.swift in Sources */,
 				02A0634B2BAFB7020037B6E3 /* ProgressHUD+CircleArcDotSpin.swift in Sources */,
 				0210D4CA2BAD81FA00E861A3 /* AuthUseCase.swift in Sources */,
 				026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */,
@@ -581,6 +611,7 @@
 				02A063662BAFB7E80037B6E3 /* UIApplication+Extension.swift in Sources */,
 				028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */,
 				02418F202BB4E90E00B6111B /* SettingsService.swift in Sources */,
+				02983ADB2BC9D5580011521C /* Date+Extension.swift in Sources */,
 				02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				02A063592BAFB7020037B6E3 /* ProgressHUD+SemiRingRotation.swift in Sources */,
 				02A0635F2BAFB7020037B6E3 /* ProgressHUD+Enums.swift in Sources */,
@@ -608,6 +639,7 @@
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
 				02A063562BAFB7020037B6E3 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
 				02A0635C2BAFB7020037B6E3 /* ProgressHUD+TriangleDotShift.swift in Sources */,
+				02983AD52BC98AD70011521C /* ProfileHeaderCell.swift in Sources */,
 				0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */,
 				02A0634E2BAFB7020037B6E3 /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
 				028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */,
@@ -842,6 +874,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		02983ADF2BCA03B90011521C /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -877,6 +917,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 02DEA1502BAA9D360053B245 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		02983AE02BCA03B90011521C /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02983ADF2BCA03B90011521C /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
