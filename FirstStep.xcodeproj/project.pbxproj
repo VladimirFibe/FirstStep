@@ -36,6 +36,9 @@
 		026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */; };
 		026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */; };
 		026B93BD2BC8F63D004FF4BC /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BC2BC8F63D004FF4BC /* UsersTableViewCell.swift */; };
+		026F4ADA2BCB9D19005C3679 /* ChatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F4AD92BCB9D19005C3679 /* ChatsService.swift */; };
+		026F4ADC2BCB9D35005C3679 /* ChatsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F4ADB2BCB9D35005C3679 /* ChatsUseCase.swift */; };
+		026F4ADE2BCB9D46005C3679 /* ChatsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F4ADD2BCB9D46005C3679 /* ChatsStore.swift */; };
 		028C04A52BC528CB0021AE72 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */; };
 		028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */; };
 		028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028C04A82BC56AD80021AE72 /* EditProfileService.swift */; };
@@ -60,6 +63,9 @@
 		02983ADB2BC9D5580011521C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADA2BC9D5580011521C /* Date+Extension.swift */; };
 		02983ADD2BCA022E0011521C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADC2BCA022E0011521C /* ChatViewController.swift */; };
 		02983AE12BCA03B90011521C /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02983AE02BCA03B90011521C /* MessageKit */; };
+		02983AEF2BCA36550011521C /* FirstStep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */; };
+		02983AF52BCA39630011521C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AF42BCA39630011521C /* Message.swift */; };
+		02983AF72BCA3A740011521C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AF62BCA3A740011521C /* CoreDataManager.swift */; };
 		02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */; };
 		02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */; };
 		02A0634A2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */; };
@@ -127,6 +133,9 @@
 		026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
 		026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
 		026B93BC2BC8F63D004FF4BC /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		026F4AD92BCB9D19005C3679 /* ChatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsService.swift; sourceTree = "<group>"; };
+		026F4ADB2BCB9D35005C3679 /* ChatsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsUseCase.swift; sourceTree = "<group>"; };
+		026F4ADD2BCB9D46005C3679 /* ChatsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsStore.swift; sourceTree = "<group>"; };
 		028C04A42BC528CB0021AE72 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A62BC53CD90021AE72 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		028C04A82BC56AD80021AE72 /* EditProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileService.swift; sourceTree = "<group>"; };
@@ -146,6 +155,9 @@
 		02983AD82BC9B00C0011521C /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
 		02983ADA2BC9D5580011521C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		02983ADC2BCA022E0011521C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstStep.xcdatamodel; sourceTree = "<group>"; };
+		02983AF42BCA39630011521C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		02983AF62BCA3A740011521C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
 		02A0632D2BAFB7020037B6E3 /* ProgressHUD+BarSweepToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BarSweepToggle.swift"; sourceTree = "<group>"; };
@@ -257,6 +269,8 @@
 			children = (
 				02A063682BAFBFDC0037B6E3 /* Person.swift */,
 				02983AD62BC9AEA50011521C /* Recent.swift */,
+				02983AF42BCA39630011521C /* Message.swift */,
+				02983AF62BCA3A740011521C /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,6 +352,9 @@
 			children = (
 				02418F0A2BB4250D00B6111B /* ChatsTableViewController.swift */,
 				02983AD82BC9B00C0011521C /* ChatsCell.swift */,
+				026F4AD92BCB9D19005C3679 /* ChatsService.swift */,
+				026F4ADB2BCB9D35005C3679 /* ChatsUseCase.swift */,
+				026F4ADD2BCB9D46005C3679 /* ChatsStore.swift */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -373,6 +390,7 @@
 				02D0095A2BA90C630003B5AA /* LaunchScreen.storyboard */,
 				029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */,
 				02D0095D2BA90C630003B5AA /* Info.plist */,
+				02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -582,11 +600,13 @@
 				02A063612BAFB7020037B6E3 /* ProgressHUD+Public.swift in Sources */,
 				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
 				026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */,
+				026F4ADC2BCB9D35005C3679 /* ChatsUseCase.swift in Sources */,
 				02A063542BAFB7020037B6E3 /* ProgressHUD+DualDotSidestep.swift in Sources */,
 				024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */,
 				02A0635D2BAFB7020037B6E3 /* ProgressHUD.swift in Sources */,
 				029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */,
 				026B93BD2BC8F63D004FF4BC /* UsersTableViewCell.swift in Sources */,
+				02983AEF2BCA36550011521C /* FirstStep.xcdatamodeld in Sources */,
 				02A063572BAFB7020037B6E3 /* ProgressHUD+PacmanProgress.swift in Sources */,
 				021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */,
 				02A063502BAFB7020037B6E3 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
@@ -614,12 +634,14 @@
 				02983ADB2BC9D5580011521C /* Date+Extension.swift in Sources */,
 				02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */,
 				02A063592BAFB7020037B6E3 /* ProgressHUD+SemiRingRotation.swift in Sources */,
+				026F4ADA2BCB9D19005C3679 /* ChatsService.swift in Sources */,
 				02A0635F2BAFB7020037B6E3 /* ProgressHUD+Enums.swift in Sources */,
 				02A0634C2BAFB7020037B6E3 /* ProgressHUD+CircleBarSpinFade.swift in Sources */,
 				0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */,
 				02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */,
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */,
+				02983AF52BCA39630011521C /* Message.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
 				028C04AB2BC56B2E0021AE72 /* EditProfileUseCase.swift in Sources */,
 				028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */,
@@ -631,10 +653,12 @@
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,
 				02418F0B2BB4250D00B6111B /* ChatsTableViewController.swift in Sources */,
 				02A063532BAFB7020037B6E3 /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
+				02983AF72BCA3A740011521C /* CoreDataManager.swift in Sources */,
 				0210D4C82BAD819D00E861A3 /* AuthStore.swift in Sources */,
 				02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */,
 				02418F1B2BB4545A00B6111B /* SettingsNameTableViewCell.swift in Sources */,
 				02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */,
+				026F4ADE2BCB9D46005C3679 /* ChatsStore.swift in Sources */,
 				028C04AD2BC56BE20021AE72 /* EditProfileStore.swift in Sources */,
 				029192A32BAA67E700DD2671 /* BaseViewController.swift in Sources */,
 				02A063562BAFB7020037B6E3 /* ProgressHUD+HorizontalDotScaling.swift in Sources */,
@@ -924,6 +948,20 @@
 			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */,
+			);
+			currentVersion = 02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */;
+			name = FirstStep.xcdatamodeld;
+			path = /Users/fibe/Developer/FirstStep/FirstStep/FirstStep.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 02D009442BA90C630003B5AA /* Project object */;
 }

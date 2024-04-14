@@ -51,7 +51,6 @@ extension ProfileViewController {
             let controller = ChatViewController(recent: recent)
             controller.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(controller, animated: true)
-
         }
     }
 }

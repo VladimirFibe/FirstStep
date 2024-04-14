@@ -27,8 +27,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func start() {
-        print(#function)
         if let currentUser = Auth.auth().currentUser, currentUser.isEmailVerified {
+            Task {
+                do {
+                    try await FirebaseClient.shared.fetchPerson()
+                } catch {}
+            }
             let controller = makeMainTabBar()
             setRootViewController(controller)
         } else {

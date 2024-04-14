@@ -1,7 +1,23 @@
 import UIKit
 
 class ChatsTableViewController: BaseTableViewController {
-    var recents: [Recent] = [.init(username: "Quen", avatarLink: "https://raw.githubusercontent.com/VladimirFibe/FirstStep/main/FirstStep/Assets.xcassets/fsimages/\("fs01").imageset/\("fs01").jpg", text: "Privet", unreadCounter: 7)]
+    var recents: [Recent] = []
+
+    //MARK: - Download Chats
+    private func downloadRecentChats() {
+        FirebaseClient.shared.downloadRecentChatsFromFireStore { recents in
+            self.recents = recents
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(FirebaseClient.shared.person?.id ?? "No Person")
+        downloadRecentChats()
+    }
 }
 
 extension ChatsTableViewController {
