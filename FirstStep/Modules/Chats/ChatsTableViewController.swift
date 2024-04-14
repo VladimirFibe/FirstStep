@@ -15,7 +15,6 @@ class ChatsTableViewController: BaseTableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(FirebaseClient.shared.person?.id ?? "No Person")
         downloadRecentChats()
     }
 }
