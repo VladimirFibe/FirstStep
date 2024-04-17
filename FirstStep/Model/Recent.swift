@@ -9,4 +9,5 @@ struct Recent: Codable {
     var unreadCounter = 0
     @ServerTimestamp var date = Date()
     var chatRoomId: String { id ?? "" }
+    var isHidden = false
 }

@@ -14,6 +14,8 @@
 		02170BEF2BB10FFE00535C2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BEE2BB10FFE00535C2F /* LoginViewController.swift */; };
 		02170BF22BB111EC00535C2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02170BF12BB111EC00535C2F /* LoginView.swift */; };
 		021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B514E2BB29039002DF204 /* OnboardingContainer.swift */; };
+		0224399F2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0224399D2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodeld */; };
+		022439A32BCE221400DBFFF2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022439A22BCE221400DBFFF2 /* Message.swift */; };
 		022DCA112BC657C100DF3F2F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022DCA102BC657C100DF3F2F /* FileStorage.swift */; };
 		02418F052BB422F900B6111B /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F042BB422F900B6111B /* Tab.swift */; };
 		02418F092BB4239600B6111B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02418F082BB4239600B6111B /* MainTabBarController.swift */; };
@@ -32,6 +34,7 @@
 		024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */; };
 		024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */; };
 		024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */; };
+		026019A42BCF314000E298A7 /* MessageDataSource+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */; };
 		026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B62BC8E9D0004FF4BC /* UsersService.swift */; };
 		026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */; };
 		026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */; };
@@ -63,8 +66,6 @@
 		02983ADB2BC9D5580011521C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADA2BC9D5580011521C /* Date+Extension.swift */; };
 		02983ADD2BCA022E0011521C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983ADC2BCA022E0011521C /* ChatViewController.swift */; };
 		02983AE12BCA03B90011521C /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 02983AE02BCA03B90011521C /* MessageKit */; };
-		02983AEF2BCA36550011521C /* FirstStep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */; };
-		02983AF52BCA39630011521C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AF42BCA39630011521C /* Message.swift */; };
 		02983AF72BCA3A740011521C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02983AF62BCA3A740011521C /* CoreDataManager.swift */; };
 		02A063482BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */; };
 		02A063492BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */; };
@@ -111,6 +112,8 @@
 		02170BEE2BB10FFE00535C2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02170BF12BB111EC00535C2F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		021B514E2BB29039002DF204 /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
+		0224399E2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstStep.xcdatamodel; sourceTree = "<group>"; };
+		022439A22BCE221400DBFFF2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		022DCA102BC657C100DF3F2F /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		02418F042BB422F900B6111B /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		02418F082BB4239600B6111B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		024B4F7F2BC79A7600E232A2 /* ProfileStatusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusService.swift; sourceTree = "<group>"; };
 		024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusUseCase.swift; sourceTree = "<group>"; };
 		024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusStore.swift; sourceTree = "<group>"; };
+		026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageDataSource+ChatViewController.swift"; sourceTree = "<group>"; };
 		026B93B62BC8E9D0004FF4BC /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
 		026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
@@ -155,8 +159,6 @@
 		02983AD82BC9B00C0011521C /* ChatsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsCell.swift; sourceTree = "<group>"; };
 		02983ADA2BC9D5580011521C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		02983ADC2BCA022E0011521C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstStep.xcdatamodel; sourceTree = "<group>"; };
-		02983AF42BCA39630011521C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		02983AF62BCA3A740011521C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		02A0632B2BAFB7020037B6E3 /* ProgressHUD+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		02A0632C2BAFB7020037B6E3 /* ProgressHUD+BallVerticalBounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressHUD+BallVerticalBounce.swift"; sourceTree = "<group>"; };
@@ -269,7 +271,7 @@
 			children = (
 				02A063682BAFBFDC0037B6E3 /* Person.swift */,
 				02983AD62BC9AEA50011521C /* Recent.swift */,
-				02983AF42BCA39630011521C /* Message.swift */,
+				022439A22BCE221400DBFFF2 /* Message.swift */,
 				02983AF62BCA3A740011521C /* CoreDataManager.swift */,
 			);
 			path = Model;
@@ -390,7 +392,7 @@
 				02D0095A2BA90C630003B5AA /* LaunchScreen.storyboard */,
 				029192A92BABD6FD00DD2671 /* GoogleService-Info.plist */,
 				02D0095D2BA90C630003B5AA /* Info.plist */,
-				02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */,
+				0224399D2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				02983ADC2BCA022E0011521C /* ChatViewController.swift */,
+				026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -601,12 +604,12 @@
 				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
 				026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */,
 				026F4ADC2BCB9D35005C3679 /* ChatsUseCase.swift in Sources */,
+				0224399F2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodeld in Sources */,
 				02A063542BAFB7020037B6E3 /* ProgressHUD+DualDotSidestep.swift in Sources */,
 				024B4F7D2BC7844B00E232A2 /* ProfileStatusViewController.swift in Sources */,
 				02A0635D2BAFB7020037B6E3 /* ProgressHUD.swift in Sources */,
 				029192A12BAA5EEE00DD2671 /* AuthTextField.swift in Sources */,
 				026B93BD2BC8F63D004FF4BC /* UsersTableViewCell.swift in Sources */,
-				02983AEF2BCA36550011521C /* FirstStep.xcdatamodeld in Sources */,
 				02A063572BAFB7020037B6E3 /* ProgressHUD+PacmanProgress.swift in Sources */,
 				021B514F2BB29039002DF204 /* OnboardingContainer.swift in Sources */,
 				02A063502BAFB7020037B6E3 /* ProgressHUD+CircleRippleMultiple.swift in Sources */,
@@ -624,6 +627,7 @@
 				02418F192BB4540E00B6111B /* BaseTableViewCell.swift in Sources */,
 				02418F052BB422F900B6111B /* Tab.swift in Sources */,
 				029192AF2BAD245100DD2671 /* Store.swift in Sources */,
+				022439A32BCE221400DBFFF2 /* Message.swift in Sources */,
 				02A0634F2BAFB7020037B6E3 /* ProgressHUD+CirclePulseSingle.swift in Sources */,
 				02418F222BB4E9AC00B6111B /* SettingsUseCase.swift in Sources */,
 				02983AD22BC989940011521C /* ProfileViewController.swift in Sources */,
@@ -641,7 +645,6 @@
 				02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */,
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */,
-				02983AF52BCA39630011521C /* Message.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
 				028C04AB2BC56B2E0021AE72 /* EditProfileUseCase.swift in Sources */,
 				028C04A72BC53CD90021AE72 /* TextFieldTableViewCell.swift in Sources */,
@@ -650,6 +653,7 @@
 				024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */,
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
 				02170BF22BB111EC00535C2F /* LoginView.swift in Sources */,
+				026019A42BCF314000E298A7 /* MessageDataSource+ChatViewController.swift in Sources */,
 				0291929C2BAA5DC700DD2671 /* BaseView.swift in Sources */,
 				02418F0B2BB4250D00B6111B /* ChatsTableViewController.swift in Sources */,
 				02A063532BAFB7020037B6E3 /* ProgressHUD+CircleStrokeSpin.swift in Sources */,
@@ -950,12 +954,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		02983AED2BCA36550011521C /* FirstStep.xcdatamodeld */ = {
+		0224399D2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */,
+				0224399E2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodel */,
 			);
-			currentVersion = 02983AEE2BCA36550011521C /* FirstStep.xcdatamodel */;
+			currentVersion = 0224399E2BCE1EBD00DBFFF2 /* FirstStep.xcdatamodel */;
 			name = FirstStep.xcdatamodeld;
 			path = /Users/fibe/Developer/FirstStep/FirstStep/FirstStep.xcdatamodeld;
 			sourceTree = "<group>";

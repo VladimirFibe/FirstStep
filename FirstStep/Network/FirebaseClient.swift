@@ -1,13 +1,20 @@
 import Firebase
 import FirebaseFirestore
 
+struct FireMessage: Codable {
+    let text: String
+
+    init(_ message: Message) {
+        text = message.text ?? ""
+    }
+}
 final class FirebaseClient {
     enum FCollectionReference: String {
         case persons
         case messages
         case channels
     }
-
+    let recents = "recents"
     static let shared = FirebaseClient()
     var person: Person? = nil
     private init() {}
@@ -21,54 +28,90 @@ final class FirebaseClient {
         Firestore.firestore().collection(collectionReference.rawValue)
     }
 
-    func sendMessage(_ message: Message? = nil, recent: Recent) {
+    func clearRecentCounter(_ recent: Recent) {
+        guard let currentId = person?.id else { return }
+        reference(.messages)
+            .document(currentId)
+            .collection(recents)
+            .document(recent.chatRoomId)
+            .updateData(["unreadCounter": 0, "isHidden": false])
+    }
+
+    func deleteRecent(_ recent: Recent) {
+        guard let currentId = person?.id else { return }
+        reference(.messages)
+            .document(currentId)
+            .collection(recents)
+            .document(recent.chatRoomId)
+            .updateData(["isHidden": true])
+    }
+
+    func saveRecent(firstId: String, secondId: String, data: [String: Any]) {
+        reference(.messages)
+            .document(firstId)
+            .collection(recents)
+            .document(secondId)
+            .setData(data)
+    }
+
+    func sendMessage(_ local: Message, recent: Recent) {
+        let message = FireMessage(local)
         guard let currentId = person?.id else { return }
         do {
             try reference(.messages)
                 .document(currentId)
                 .collection(recent.chatRoomId)
                 .document()
-                .setData(from: recent)
+                .setData(from: message)
             try reference(.messages)
                 .document(recent.chatRoomId)
                 .collection(currentId)
                 .document()
-                .setData(from: recent)
+                .setData(from: message)
         } catch {}
 
         var data: [String: Any] = [
-            "text":             "message.text",
+            "text":             message.text,
             "username":         recent.username,
             "date":             Date(),
             "avatarLink":       recent.avatarLink,
+            "isHidden":         false,
             "unreadCounter":    0
         ]
 
-        reference(.messages)
-            .document(currentId)
-            .collection("recents")
-            .document(recent.chatRoomId)
-            .setData(data)
+        saveRecent(firstId: currentId, secondId: recent.chatRoomId, data: data)
 
         data["name"] = person?.username ?? ""
         data["avatarLink"] = person?.avatarLink ?? ""
         reference(.messages)
             .document(recent.chatRoomId)
-            .collection("recents")
+            .collection(recents)
             .document(currentId)
-            .setData(data)
+            .getDocument { snapshot, error in
+                if let snapshot,
+                   let old = snapshot.data(),
+                   let unreadCounter = old["unreadCounter"] as? Int {
+                    data["unreadCounter"] = unreadCounter + 1
+                } else {
+                    data["unreadCounter"] = 1
+                }
+                self.saveRecent(
+                    firstId: recent.chatRoomId,
+                    secondId: currentId,
+                    data: data
+                )
+            }
     }
 
     func downloadRecentChatsFromFireStore(completion: @escaping ([Recent]) -> Void) {
         guard let currentId = person?.id else { return }
         reference(.messages)
             .document(currentId)
-            .collection("recents")
+            .collection(recents)
+            .whereField("isHidden", isEqualTo: false)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else { return }
-
-                let recents = documents.compactMap {
-                    try? $0.data(as: Recent.self)}
+                let recents = documents.compactMap {try? $0.data(as: Recent.self)}
                 completion(recents)
             }
     }

@@ -1,9 +1,12 @@
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 final class ChatViewController: MessagesViewController {
     let recent: Recent
-
+    private let refreshControl = UIRefreshControl()
+    private let micButton = InputBarButtonItem()
+    var longPressGesture: UILongPressGestureRecognizer!
     init(recent: Recent) {
         self.recent = recent
         super.init(nibName: nil, bundle: nil)
@@ -15,6 +18,67 @@ final class ChatViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseClient.shared.sendMessage(recent: recent)
+        guard let message = CoreDataManager.shared.createMessage(text: "Yes!") else { return }
+        FirebaseClient.shared.sendMessage(message, recent: recent)
+//        FirebaseClient.shared.clearRecentCounter(recent)
+
+        configureGestureRecognizer()
+        configureMessageCollectionView()
+        configureMessageInputBar()
+    }
+}
+// MARK: - Configurations
+extension ChatViewController {
+    private func configureMessageCollectionView() {
+//        messagesCollectionView.messagesDataSource = self
+//        messagesCollectionView.messageCellDelegate = self
+//        messagesCollectionView.messagesDisplayDelegate = self
+//        messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.refreshControl = refreshControl
+
+        scrollsToLastItemOnKeyboardBeginsEditing = true
+        maintainPositionOnInputBarHeightChanged = true
+    }
+
+    private func configureMessageInputBar() {
+//        messageInputBar.delegate = self
+
+        let attachButton = InputBarButtonItem()
+        attachButton.image = UIImage(
+            systemName: "plus",
+            withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)
+        )
+        attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
+        attachButton.onTouchUpInside { item in self.actionAttachMessage() }
+
+        micButton.image = UIImage(
+            systemName: "mic.fill",
+            withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)
+        )
+        micButton.setSize(CGSize(width: 30, height: 30), animated: false)
+        micButton.onTouchUpInside { item in print("Mic botton pressed")}
+        micButton.addGestureRecognizer(longPressGesture)
+
+        messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
+        messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
+        messageInputBar.inputTextView.isImagePasteEnabled = false
+        messageInputBar.backgroundView.backgroundColor = .systemBackground
+        messageInputBar.inputTextView.backgroundColor = .systemBackground
+    }
+
+    private func configureGestureRecognizer() {
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(recordAudio))
+        longPressGesture.minimumPressDuration = 0.5
+        longPressGesture.delaysTouchesBegan = true
+    }
+}
+// MARK: - Actions
+extension ChatViewController {
+    private func actionAttachMessage() {
+
+    }
+
+    @objc private func recordAudio() {
+
     }
 }
