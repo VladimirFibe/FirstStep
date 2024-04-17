@@ -35,6 +35,12 @@
 		024B4F822BC79A8200E232A2 /* ProfileStatusUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */; };
 		024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */; };
 		026019A42BCF314000E298A7 /* MessageDataSource+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */; };
+		026019A72BD00F6D00E298A7 /* MessageCellDelegate+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019A62BD00F6D00E298A7 /* MessageCellDelegate+ChatViewController.swift */; };
+		026019A92BD00F7C00E298A7 /* MessagesDisplayDelegate+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019A82BD00F7C00E298A7 /* MessagesDisplayDelegate+ChatViewController.swift */; };
+		026019AB2BD00F8B00E298A7 /* MessagesLayoutDelegate+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019AA2BD00F8B00E298A7 /* MessagesLayoutDelegate+ChatViewController.swift */; };
+		026019AD2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019AC2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift */; };
+		026019AF2BD013A400E298A7 /* MKSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019AE2BD013A400E298A7 /* MKSender.swift */; };
+		026019B12BD016A100E298A7 /* MKMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026019B02BD016A100E298A7 /* MKMessage.swift */; };
 		026B93B72BC8E9D0004FF4BC /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B62BC8E9D0004FF4BC /* UsersService.swift */; };
 		026B93B92BC8EA7E004FF4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */; };
 		026B93BB2BC8EA9F004FF4BC /* UsersStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */; };
@@ -133,6 +139,12 @@
 		024B4F812BC79A8200E232A2 /* ProfileStatusUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusUseCase.swift; sourceTree = "<group>"; };
 		024B4F832BC79A9400E232A2 /* ProfileStatusStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatusStore.swift; sourceTree = "<group>"; };
 		026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageDataSource+ChatViewController.swift"; sourceTree = "<group>"; };
+		026019A62BD00F6D00E298A7 /* MessageCellDelegate+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageCellDelegate+ChatViewController.swift"; sourceTree = "<group>"; };
+		026019A82BD00F7C00E298A7 /* MessagesDisplayDelegate+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessagesDisplayDelegate+ChatViewController.swift"; sourceTree = "<group>"; };
+		026019AA2BD00F8B00E298A7 /* MessagesLayoutDelegate+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessagesLayoutDelegate+ChatViewController.swift"; sourceTree = "<group>"; };
+		026019AC2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputBarAccessoryViewDelegate+ChatViewController.swift"; sourceTree = "<group>"; };
+		026019AE2BD013A400E298A7 /* MKSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKSender.swift; sourceTree = "<group>"; };
+		026019B02BD016A100E298A7 /* MKMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMessage.swift; sourceTree = "<group>"; };
 		026B93B62BC8E9D0004FF4BC /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		026B93B82BC8EA7E004FF4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
 		026B93BA2BC8EA9F004FF4BC /* UsersStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStore.swift; sourceTree = "<group>"; };
@@ -272,6 +284,8 @@
 				02A063682BAFBFDC0037B6E3 /* Person.swift */,
 				02983AD62BC9AEA50011521C /* Recent.swift */,
 				022439A22BCE221400DBFFF2 /* Message.swift */,
+				026019AE2BD013A400E298A7 /* MKSender.swift */,
+				026019B02BD016A100E298A7 /* MKMessage.swift */,
 				02983AF62BCA3A740011521C /* CoreDataManager.swift */,
 			);
 			path = Model;
@@ -385,6 +399,18 @@
 			path = ProfileStatus;
 			sourceTree = "<group>";
 		};
+		026019A52BD00F0300E298A7 /* ChatExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */,
+				026019A62BD00F6D00E298A7 /* MessageCellDelegate+ChatViewController.swift */,
+				026019A82BD00F7C00E298A7 /* MessagesDisplayDelegate+ChatViewController.swift */,
+				026019AA2BD00F8B00E298A7 /* MessagesLayoutDelegate+ChatViewController.swift */,
+				026019AC2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift */,
+			);
+			path = ChatExtensions;
+			sourceTree = "<group>";
+		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,7 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				02983ADC2BCA022E0011521C /* ChatViewController.swift */,
-				026019A32BCF314000E298A7 /* MessageDataSource+ChatViewController.swift */,
+				026019A52BD00F0300E298A7 /* ChatExtensions */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -597,8 +623,10 @@
 				02418F172BB42B7100B6111B /* BaseTableViewController.swift in Sources */,
 				02A0635A2BAFB7020037B6E3 /* ProgressHUD+SFSymbolBounce.swift in Sources */,
 				02A0634D2BAFB7020037B6E3 /* ProgressHUD+CircleDotSpinFade.swift in Sources */,
+				026019AB2BD00F8B00E298A7 /* MessagesLayoutDelegate+ChatViewController.swift in Sources */,
 				02A063552BAFB7020037B6E3 /* ProgressHUD+HorizontalBarScaling.swift in Sources */,
 				02983AD72BC9AEA50011521C /* Recent.swift in Sources */,
+				026019A72BD00F6D00E298A7 /* MessageCellDelegate+ChatViewController.swift in Sources */,
 				02D009542BA90C630003B5AA /* AuthViewController.swift in Sources */,
 				02A063612BAFB7020037B6E3 /* ProgressHUD+Public.swift in Sources */,
 				024B4F842BC79A9400E232A2 /* ProfileStatusStore.swift in Sources */,
@@ -643,6 +671,7 @@
 				02A0634C2BAFB7020037B6E3 /* ProgressHUD+CircleBarSpinFade.swift in Sources */,
 				0210D4CC2BAD824300E861A3 /* AuthService.swift in Sources */,
 				02418F112BB425B200B6111B /* SettingsViewController.swift in Sources */,
+				026019B12BD016A100E298A7 /* MKMessage.swift in Sources */,
 				02A063522BAFB7020037B6E3 /* ProgressHUD+CircleRotateChase.swift in Sources */,
 				02418F1D2BB45D0200B6111B /* EditProfileViewController.swift in Sources */,
 				02D009502BA90C630003B5AA /* AppDelegate.swift in Sources */,
@@ -651,6 +680,8 @@
 				02A0635B2BAFB7020037B6E3 /* ProgressHUD+SquareCircuitSnake.swift in Sources */,
 				02D009522BA90C630003B5AA /* SceneDelegate.swift in Sources */,
 				024B4F802BC79A7600E232A2 /* ProfileStatusService.swift in Sources */,
+				026019AF2BD013A400E298A7 /* MKSender.swift in Sources */,
+				026019A92BD00F7C00E298A7 /* MessagesDisplayDelegate+ChatViewController.swift in Sources */,
 				02A063602BAFB7020037B6E3 /* ProgressHUD+LiveIcon.swift in Sources */,
 				02170BF22BB111EC00535C2F /* LoginView.swift in Sources */,
 				026019A42BCF314000E298A7 /* MessageDataSource+ChatViewController.swift in Sources */,
@@ -671,6 +702,7 @@
 				0210D4CE2BAD826E00E861A3 /* FirebaseClient.swift in Sources */,
 				02A0634E2BAFB7020037B6E3 /* ProgressHUD+CirclePulseMultiple.swift in Sources */,
 				028C04A92BC56AD80021AE72 /* EditProfileService.swift in Sources */,
+				026019AD2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift in Sources */,
 				02A0635E2BAFB7020037B6E3 /* ProgressHUD+Banner.swift in Sources */,
 				02A063622BAFB7020037B6E3 /* ProgressView.swift in Sources */,
 				02418F0F2BB4259500B6111B /* UsersViewControlller.swift in Sources */,

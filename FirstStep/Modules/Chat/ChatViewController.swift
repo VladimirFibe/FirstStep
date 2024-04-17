@@ -6,7 +6,9 @@ final class ChatViewController: MessagesViewController {
     let recent: Recent
     private let refreshControl = UIRefreshControl()
     private let micButton = InputBarButtonItem()
-    var longPressGesture: UILongPressGestureRecognizer!
+    private var longPressGesture: UILongPressGestureRecognizer!
+    var mkMessages: [MKMessage] = []
+    let currentPerson = MKSender(senderId: Person.currentId, displayName: Person.currentName)
     init(recent: Recent) {
         self.recent = recent
         super.init(nibName: nil, bundle: nil)
@@ -30,10 +32,10 @@ final class ChatViewController: MessagesViewController {
 // MARK: - Configurations
 extension ChatViewController {
     private func configureMessageCollectionView() {
-//        messagesCollectionView.messagesDataSource = self
-//        messagesCollectionView.messageCellDelegate = self
-//        messagesCollectionView.messagesDisplayDelegate = self
-//        messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.messageCellDelegate = self
         messagesCollectionView.refreshControl = refreshControl
 
         scrollsToLastItemOnKeyboardBeginsEditing = true
@@ -41,22 +43,17 @@ extension ChatViewController {
     }
 
     private func configureMessageInputBar() {
-//        messageInputBar.delegate = self
+        messageInputBar.delegate = self
 
         let attachButton = InputBarButtonItem()
-        attachButton.image = UIImage(
-            systemName: "plus",
-            withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)
-        )
+        let attachConfig = UIImage.SymbolConfiguration(pointSize: 30)
+        attachButton.image = UIImage(systemName: "plus", withConfiguration: attachConfig)
         attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
         attachButton.onTouchUpInside { item in self.actionAttachMessage() }
 
-        micButton.image = UIImage(
-            systemName: "mic.fill",
-            withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)
-        )
+        let micConfig = UIImage.SymbolConfiguration(pointSize: 30)
+        micButton.image = UIImage(systemName: "mic.fill", withConfiguration: micConfig)
         micButton.setSize(CGSize(width: 30, height: 30), animated: false)
-        micButton.onTouchUpInside { item in print("Mic botton pressed")}
         micButton.addGestureRecognizer(longPressGesture)
 
         messageInputBar.setStackViewItems([attachButton], forStack: .left, animated: false)
