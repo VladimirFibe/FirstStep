@@ -78,4 +78,23 @@ extension ChatViewController {
     @objc private func recordAudio() {
 
     }
+
+    func messageSend(
+        text: String? = nil,
+        photo: UIImage? = nil,
+        videoUrl: URL? = nil,
+        audio: String? = nil,
+        location: String? = nil,
+        audioDuration: Float = 0.0
+    ) {
+        CoreDataManager.shared.sendMessage(
+            recent: recent,
+            text: text,
+            photo: photo,
+            videoUrl: videoUrl,
+            audio: audio,
+            audioDuration: audioDuration,
+            location: location,
+        )
+    }
 }

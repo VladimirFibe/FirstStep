@@ -283,10 +283,9 @@
 			children = (
 				02A063682BAFBFDC0037B6E3 /* Person.swift */,
 				02983AD62BC9AEA50011521C /* Recent.swift */,
-				022439A22BCE221400DBFFF2 /* Message.swift */,
 				026019AE2BD013A400E298A7 /* MKSender.swift */,
 				026019B02BD016A100E298A7 /* MKMessage.swift */,
-				02983AF62BCA3A740011521C /* CoreDataManager.swift */,
+				026019B22BD031A100E298A7 /* CoreData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -409,6 +408,15 @@
 				026019AC2BD00F9D00E298A7 /* InputBarAccessoryViewDelegate+ChatViewController.swift */,
 			);
 			path = ChatExtensions;
+			sourceTree = "<group>";
+		};
+		026019B22BD031A100E298A7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				022439A22BCE221400DBFFF2 /* Message.swift */,
+				02983AF62BCA3A740011521C /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0291929A2BAA5DA200DD2671 /* Supporting Files */ = {

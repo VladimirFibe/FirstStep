@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 import CoreData
 
 struct CoreDataManager {
@@ -7,7 +7,6 @@ struct CoreDataManager {
     private init() {}
 
     let persistentContainer: NSPersistentContainer = {
-
         let container = NSPersistentContainer(name: "FirstStep")
         container.loadPersistentStores { storeDescription, error in
             if let error = error {
@@ -16,7 +15,6 @@ struct CoreDataManager {
                 print(storeDescription.url?.absoluteString ?? "")
             }
         }
-
         return container
     }()
 
@@ -86,5 +84,17 @@ struct CoreDataManager {
         } catch let error {
             print("Failed to delete: \(error)")
         }
+    }
+
+    func sendMessage(
+        recent: Recent?,
+        text: String?,
+        photo: UIImage?,
+        videoUrl: URL?,
+        audio: String?,
+        audioDuration: Float = 0.0,
+        location: String?
+    ) {
+
     }
 }

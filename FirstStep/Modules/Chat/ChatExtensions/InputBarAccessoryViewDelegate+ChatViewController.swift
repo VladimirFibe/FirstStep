@@ -9,7 +9,12 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     }
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        print("send", messageInputBar.inputTextView.text ?? "")
+        for component in inputBar.inputTextView.components {
+            if let text = component as? String {
+                messageSend(text: text)
+            }
+        }
         messageInputBar.inputTextView.text = ""
+        messageInputBar.invalidatePlugins()
     }
 }
