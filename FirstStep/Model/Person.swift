@@ -8,6 +8,12 @@ struct Person: Identifiable, Codable {
     var email: String
     var avatarLink = ""
     var status = Status()
+    var uid: String {
+        id ?? ""
+    }
+    var initials: String {
+        String(username.first ?? "?")
+    }
     static var currentId: String {
         FirebaseClient.shared.person?.id ?? ""
     }

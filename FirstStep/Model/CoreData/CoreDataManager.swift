@@ -100,17 +100,18 @@ struct CoreDataManager {
         let message = Message(context: context)
         message.id = UUID().uuidString
         message.chatRoomId = recent.chatRoomId
-        message.uid = Person.currentId
+        message.uid = currentPerson.uid
         message.name = currentPerson.username
-        message.initials = "?"
+        message.initials = currentPerson.initials
         message.date = Date()
-        message.status = "Sent"
+        message.status = Constants.sent
         if let text {
             message.text = text
-            message.type = "text"
+            message.type = Constants.text
         }
         do {
             try context.save()
+            FirebaseClient.shared.sendMessage(message, recent: recent)
         } catch let error {
             print("Failed to create: \(error)")
         }

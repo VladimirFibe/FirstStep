@@ -2,12 +2,31 @@ import Firebase
 import FirebaseFirestore
 
 struct FireMessage: Codable {
-    let text: String
+    var chatRoomId: String?
+    var date: Date?
+    var id: String?
+    var initials: String?
+    var name: String?
+    var read: Date?
+    var status: String?
+    var text: String
+    var type: String?
+    var uid: String?
 
     init(_ message: Message) {
+        chatRoomId = message.chatRoomId
+        date = message.date
+        id = message.id
+        initials = message.initials
+        name = message.name
+        read = message.read
+        status = message.status
         text = message.text ?? ""
+        type = message.type
+        uid = message.uid
     }
 }
+
 final class FirebaseClient {
     enum FCollectionReference: String {
         case persons
