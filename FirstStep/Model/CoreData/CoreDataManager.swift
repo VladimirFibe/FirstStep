@@ -87,7 +87,7 @@ struct CoreDataManager {
     }
 
     func sendMessage(
-        recent: Recent?,
+        recent: Recent,
         text: String?,
         photo: UIImage?,
         videoUrl: URL?,
@@ -95,6 +95,24 @@ struct CoreDataManager {
         audioDuration: Float = 0.0,
         location: String?
     ) {
-
+        guard let currentPerson = FirebaseClient.shared.person else { return }
+        let context = persistentContainer.viewContext
+        let message = Message(context: context)
+        message.id = UUID().uuidString
+        message.chatRoomId = recent.chatRoomId
+        message.uid = Person.currentId
+        message.name = currentPerson.username
+        message.initials = "?"
+        message.date = Date()
+        message.status = "Sent"
+        if let text {
+            message.text = text
+            message.type = "text"
+        }
+        do {
+            try context.save()
+        } catch let error {
+            print("Failed to create: \(error)")
+        }
     }
 }

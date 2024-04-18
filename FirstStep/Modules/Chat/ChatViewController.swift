@@ -20,10 +20,6 @@ final class ChatViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let message = CoreDataManager.shared.createMessage(text: "Yes!") else { return }
-        FirebaseClient.shared.sendMessage(message, recent: recent)
-//        FirebaseClient.shared.clearRecentCounter(recent)
-
         configureGestureRecognizer()
         configureMessageCollectionView()
         configureMessageInputBar()
@@ -94,7 +90,7 @@ extension ChatViewController {
             videoUrl: videoUrl,
             audio: audio,
             audioDuration: audioDuration,
-            location: location,
+            location: location
         )
     }
 }
